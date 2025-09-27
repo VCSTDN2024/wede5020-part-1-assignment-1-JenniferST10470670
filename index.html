@@ -1,65 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bora Foundation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bora Foundation</title>
+
+  <!-- your external stylesheet if you have one -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Base */
+    body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: white;          
+  min-height: 100%;
+  overflow-y: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  background:#1a4c48;      /* brand colour */
+  color:#ffffff;           /* base white text */
+  padding:40px 24px;
+  border-radius:8px;
+  max-width: 1100px;
+  margin: 32px auto;
+  text-align:center;
+}
+.hero .tagline,
+.hero .lead {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* explicitly override child text elements */
+.hero h1,
+.hero p,
+.hero .tagline,
+.hero .lead {
+  color:#ffffff !important;   /* force white */
+}
+
+
+
+.hero h1{
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  animation: heroSlideIn 900ms ease-out forwards;
+  opacity: 0;             
+}
+
+.hero .tagline{
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  margin: 0 0 18px 0;
+  opacity: 0;
+  animation: heroFadeIn 1.2s ease-out 250ms forwards; /* delay after title */
+}
+
+/* Body copy */
+.hero .lead{
+  line-height: 1.75;
+  font-size: 1.05rem;
+  max-width: 70ch;
+}
+
+/* Keyframes */
+@keyframes heroSlideIn{
+  0%   {opacity:0; transform: translateY(-16px)}
+  100% {opacity:1; transform: translateY(0)}
+}
+@keyframes heroFadeIn{
+  0%   {opacity:0}
+  100% {opacity:1}
+}
+
+/* Optional: looping subtle glow on the quote (remove if you don't want looping) */
+.hero .animate-quote{
+  text-shadow: 0 0 0 rgba(255,255,255,0);
+  animation:
+    heroFadeIn 1.2s ease-out 250ms forwards,
+  
+}
+@keyframes quoteGlow{
+  from { text-shadow: 0 0 0 rgba(242, 220, 220, 0) }
+  to   { text-shadow: 0 0 10px rgba(255,255,255,0.35) }
+}
+
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Header / Nav */
+    header { background: #1a4c48; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 20px; gap: 16px;
+    }
+    nav .brand img { height: 48px; width: 48px; }
+    nav ul {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; gap: 16px;
+    }
+    nav a { color: #fff; text-decoration: none; font-weight: 700; }
+    nav a:hover { text-decoration: underline; }
+
+    /* Stack menu on small screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;    /* center everything */
+    text-align: center;
+  }
+
+  nav .brand {
+    margin-bottom: 15px;    /* add space below logo */
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul a {
+    display: block;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+
+
+    /* Main */
+    main { flex: 1; padding: 24px 20px; }
+    h1 { font-size: 3rem; margin: 0 0 12px; color: #f0f0f0; }
+    .tagline { font-style: italic; margin: 0 0 12px; }
+    .lead { max-width: 900px; line-height: 1.6; margin-bottom: 24px; }
+    .cta a {
+      display: inline-block; padding: 12px 20px; background: #1a4c48;
+      border-radius: 8px; color: #fff; font-weight: 700; text-decoration: none;
+    }
+    .cta a:hover { background: #163f3b; }
+
    
-    <link rel="stylesheet" href="styles.css">
-    
+    footer {
+      background: #1a4c48; text-align: center; padding: 16px 12px;
+    }
+    .social { display: inline-flex; gap: 12px; align-items: center; margin: 8px 0 12px; }
+    .social img { width: 30px; height: 32px; }
+  </style>
+
+
+
+
 </head>
 <body>
 
-    <header>
-        <nav id="navblock">
-            <a href="index.html">
-            <img src="/Images/BoraLogo.png" width="48" height="48" alt="BoraLogo"/>
+  <header>
+    <nav>
+      <a class="brand" href="index.html">
+        <img src="Images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="essentials.html">Essentials</a></li>
+        <li><a href="ways-to-give.html">Ways To Give</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-           </a>
-           <ul>
-           <li><a href="index.html">Home</a></li>
-            <li><a href="donate.html">About Us </a></li>
-            <li><a href="essentials.html">Essentials</a></li>
-           <li><a href="ways-to-give.html">WaysToGive</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="impacts.html">Impacts</a></li>
-             <li><a href="contact.html">Contact</a></li>
-           </ul>
-        </nav>
-         <hr>
-    </header>
-
-    <h1 id="titleblock">Bora Foundation</h1>
-    
-    <p id="subtitleblock">"Shining a Light, Building Brighter Futures"</p>
-        Bora Foundation's mission is to provide safe shelter, education, and support to shine a light in their lives by helping them build brighter futures. 
-        The Foundation embodies Bora Johnson's visionary commitment to uplifting the most vulnerable members of society, leaving a lasting legacy of hope and empowerment
-
+ <main>
+  <section class="hero">
+    <h1 class="animate-title">Bora Foundation</h1>
+    <p class="tagline animate-quote">“Shining a Light, Building Brighter Futures”</p>
+    <p class="lead">
+      Bora Foundation's mission is to provide safe shelter, education, and support to
+      shine a light in their lives by helping them build brighter futures. The Foundation
+      embodies Bora Johnson's visionary commitment to uplifting the most vulnerable
+      members of society, leaving a lasting legacy of hope and empowerment.
     </p>
-    <img src="/Images/home.png"width="1000px" height="auto" alt="home image "/>
 
-    <p id="nextblock"><a href="about.html">LEARN MORE</a></p>
-   <hr>
-   <!-- Social media links -->
-    <footer>
-        <header>
-            <h3>Our social media </h3>
-        </header>
-        <a href="https://www.instagram.com/accounts/login/?hl=en"target="_blank">
-            <img src="/Images/insta.png" style="width: 30px; height: 32px;"/>
-        </a>
-         <a href="https://www.facebook.com/login.php"target="_blank">
-            <img src="/Images/facebook.png" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://https://api.linkedin.com/login"target="_blank">
-            <img src="/Images/linkedin.webp" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://web.whatsapp.com/"target="_blank">
-            <img src="/Images/whatsApp.png" style="width: 30px; height: 32px;"/>
-        </a><hr>
-        <p>&copy; 2024 Bora Foundation. All rights reserved.</p>
-    </footer>
-    
+    <!-- Add your images back -->
+    <img src="Images/hands.png" alt="Helping hands" />
+    <img src="Images/child.png" alt="Child smiling" style="margin-top:16px;" />
+  </section>
+</main>
+
+
+  <footer>
+    <h3>Our social media</h3>
+    <div class="social">
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
+        <img src="Images/insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
+        <img src="Images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+        <img src="Images/linkedin.webp" alt="LinkedIn" />
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
+        <img src="Images/whatsApp.png" alt="WhatsApp" />
+      </a>
+    </div>
+    <p>&copy; 2024 Bora Foundation. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
