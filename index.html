@@ -5,170 +5,243 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bora Foundation</title>
 
-  <!-- your external stylesheet if you have one -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- External stylesheet (if you decide to split later) -->
+  <link rel="stylesheet" href="styles.css"> 
 
   <style>
-    /* Base */
+    /* === Base layout === */
     body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: white;          
-  min-height: 100%;
-  overflow-y: auto;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-}
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      min-height: 100%;
+      overflow-y: auto;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+    }
 
-.hero {
-  background:#1a4c48;      /* brand colour */
-  color:#ffffff;           /* base white text */
-  padding:40px 24px;
-  border-radius:8px;
-  max-width: 1100px;
-  margin: 32px auto;
-  text-align:center;
-}
-.hero .tagline,
-.hero .lead {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-/* explicitly override child text elements */
-.hero h1,
-.hero p,
-.hero .tagline,
-.hero .lead {
-  color:#ffffff !important;   /* force white */
-}
+    /* === Header and Navigation === */
+    header {
+      background: #1a4c48;
+    }
 
-
-
-.hero h1{
-  font-size: clamp(2rem, 6vw, 3.25rem);
-  font-weight: 800;
-  letter-spacing: 1px;
-  color: #ffffff;
-  margin: 0 0 12px 0;
-  animation: heroSlideIn 900ms ease-out forwards;
-  opacity: 0;             
-}
-
-.hero .tagline{
-  font-style: italic;
-  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
-  margin: 0 0 18px 0;
-  opacity: 0;
-  animation: heroFadeIn 1.2s ease-out 250ms forwards; /* delay after title */
-}
-
-/* Body copy */
-.hero .lead{
-  line-height: 1.75;
-  font-size: 1.05rem;
-  max-width: 70ch;
-}
-
-/* Keyframes */
-@keyframes heroSlideIn{
-  0%   {opacity:0; transform: translateY(-16px)}
-  100% {opacity:1; transform: translateY(0)}
-}
-@keyframes heroFadeIn{
-  0%   {opacity:0}
-  100% {opacity:1}
-}
-
-/* Optional: looping subtle glow on the quote (remove if you don't want looping) */
-.hero .animate-quote{
-  text-shadow: 0 0 0 rgba(255,255,255,0);
-  animation:
-    heroFadeIn 1.2s ease-out 250ms forwards,
-  
-}
-@keyframes quoteGlow{
-  from { text-shadow: 0 0 0 rgba(242, 220, 220, 0) }
-  to   { text-shadow: 0 0 10px rgba(255,255,255,0.35) }
-}
-
-
-    img { max-width: 100%; height: auto; display: block; }
-
-    /* Header / Nav */
-    header { background: #1a4c48; }
     nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 12px 20px; gap: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      gap: 16px;
     }
-    nav .brand img { height: 48px; width: 48px; }
+
+    nav .brand img {
+      height: 48px;
+      width: 48px;
+    }
+
     nav ul {
-      list-style: none; margin: 0; padding: 0;
-      display: flex; gap: 16px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
     }
-    nav a { color: #fff; text-decoration: none; font-weight: 700; }
-    nav a:hover { text-decoration: underline; }
 
-    /* Stack menu on small screens */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;    /* center everything */
-    text-align: center;
-  }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-  nav .brand {
-    margin-bottom: 15px;    /* add space below logo */
-  }
+    nav a:hover {
+      text-decoration: underline;
+    }
+     /* === Call-to-action button === */
+    .cta {
+      margin-top: 24px;           /* space above the button */
+      text-align: center;         /* center the button */
+    }
 
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-  }
-
-  nav ul li {
-    width: 100%;
-  }
-
-  nav ul a {
-    display: block;
-    padding: 10px 12px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 10px;
-    text-align: center;
-  }
-}
-
-
-    /* Main */
-    main { flex: 1; padding: 24px 20px; }
-    h1 { font-size: 3rem; margin: 0 0 12px; color: #f0f0f0; }
-    .tagline { font-style: italic; margin: 0 0 12px; }
-    .lead { max-width: 900px; line-height: 1.6; margin-bottom: 24px; }
     .cta a {
-      display: inline-block; padding: 12px 20px; background: #1a4c48;
-      border-radius: 8px; color: #fff; font-weight: 700; text-decoration: none;
+      display: inline-block;
+      padding: 12px 20px;
+      background: #ffffff;        /* white background */
+      color: #1a4c48;             /* green text */
+      border: 2px solid white;  /* green border */
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
     }
-    .cta a:hover { background: #163f3b; }
 
-   
+    .cta a:hover {
+      background: #1a4c48;        /* green background on hover */
+      color: #ffffff;             /* white text on hover */
+      transform: translateY(-2px); /* slight lift */
+    }
+
+
+    /* === Hero Section === */
+    .hero {
+      background: #1a4c48; /* brand colour */
+      color: #ffffff;
+      padding: 40px 24px;
+      border-radius: 8px;
+      max-width: 1100px;
+      margin: 32px auto;
+      text-align: center;
+    }
+
+    .hero h1,
+    .hero p,
+    .hero .tagline,
+    .hero .lead {
+      color: #ffffff !important; /* force white */
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin: 0 0 12px 0;
+      animation: heroSlideIn 900ms ease-out forwards;
+      opacity: 0;
+    }
+
+    .hero .tagline {
+      font-style: italic;
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      margin: 0 0 18px 0;
+      opacity: 0;
+      animation: heroFadeIn 1.2s ease-out 250ms forwards;
+    }
+
+    .hero .lead {
+      line-height: 1.75;
+      font-size: 1.05rem;
+      max-width: 70ch;
+      margin: 0 auto;
+    }
+
+    /* === Animations === */
+    @keyframes heroSlideIn {
+      0% { opacity: 0; transform: translateY(-16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heroFadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .hero .animate-quote {
+      text-shadow: 0 0 0 rgba(255,255,255,0);
+      animation: heroFadeIn 1.2s ease-out 250ms forwards;
+    }
+
+    @keyframes quoteGlow {
+      from { text-shadow: 0 0 0 rgba(242, 220, 220, 0); }
+      to   { text-shadow: 0 0 10px rgba(255,255,255,0.35); }
+    }
+
+    /* === Main Content === */
+    main {
+      flex: 1;
+      padding: 24px 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0 0 12px;
+      color: #f0f0f0;
+    }
+
+    .tagline {
+      font-style: italic;
+      margin: 0 0 12px;
+    }
+
+    .lead {
+      max-width: 900px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #1a4c48;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .cta a:hover {
+      background: #163f3b;
+    }
+
+    /* === Footer === */
     footer {
-      background: #1a4c48; text-align: center; padding: 16px 12px;
+      background: #1a4c48;
+      text-align: center;
+      padding: 16px 12px;
     }
-    .social { display: inline-flex; gap: 12px; align-items: center; margin: 8px 0 12px; }
-    .social img { width: 30px; height: 32px; }
+
+    .social {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      margin: 8px 0 12px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 32px;
+    }
+
+    /* === Responsive Nav (for smaller screens) === */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav .brand {
+        margin-bottom: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul a {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
   </style>
-
-
-
-
 </head>
-<body>
 
+<body>
+  <!-- === Header & Navigation === -->
   <header>
     <nav>
       <a class="brand" href="index.html">
@@ -186,24 +259,32 @@
     </nav>
   </header>
 
- <main>
-  <section class="hero">
-    <h1 class="animate-title">Bora Foundation</h1>
-    <p class="tagline animate-quote">“Shining a Light, Building Brighter Futures”</p>
-    <p class="lead">
-      Bora Foundation's mission is to provide safe shelter, education, and support to
-      shine a light in their lives by helping them build brighter futures. The Foundation
-      embodies Bora Johnson's visionary commitment to uplifting the most vulnerable
-      members of society, leaving a lasting legacy of hope and empowerment.
-    </p>
+  <!-- === Main Hero Section === -->
+  <main>
+    <section class="hero">
+      <h1 class="animate-title">Bora Foundation</h1>
+      <p class="tagline animate-quote">“Shining a Light, Building Brighter Futures”</p>
+      <p class="lead">
+        Bora Foundation's mission is to provide safe shelter, education, and support to
+        shine a light in their lives by helping them build brighter futures. The Foundation
+        embodies Bora Johnson's visionary commitment to uplifting the most vulnerable
+        members of society, leaving a lasting legacy of hope and empowerment.
+      </p>
 
-    <!-- Add your images back -->
-    <img src="Images/hands.png" alt="Helping hands" />
-    <img src="Images/child.png" alt="Child smiling" style="margin-top:16px;" />
-  </section>
-</main>
+      <!-- Images that support the message -->
+<img src="Images/hands.png" alt="Helping hands" />
+<img src="Images/child.png" alt="Child smiling" style="margin-top:16px;" />
 
+<!-- LEARN MORE button  -->
+<div class="cta">
+  <a href="about.html">LEARN MORE</a>
+</div>
 
+      
+    </section>
+  </main>
+
+  <!-- === Footer === -->
   <footer>
     <h3>Our social media</h3>
     <div class="social">
@@ -222,6 +303,5 @@
     </div>
     <p>&copy; 2024 Bora Foundation. All rights reserved.</p>
   </footer>
-
 </body>
 </html>

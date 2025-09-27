@@ -1,117 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Page title -->
-  <title>Essentials-Bora Foundation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Essentials – Bora Foundation</title>
+   <link rel="stylesheet" href="styles.css"> 
+
+  <style>
+    /* === Base layout === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #1a4c48;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* === Header and Navigation === */
+    header {
+      background: #1a4c48;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      gap: 16px;
+      background: #1a4c48;
+    }
+
+    nav .brand img {
+      height: 48px;
+      width: 48px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    main {
+      flex: 1;
+      padding: 32px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+    }
+
+    main h2 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    main p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    /* === Footer === */
+    footer {
+      background: #1a4c48;
+      text-align: center;
+      padding: 24px 12px;
+      color: white;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    .social {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 32px;
+    }
+
+    /* === Responsive Nav === */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav .brand {
+        margin-bottom: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul a {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
-<header>
-        <nav>
-            <a href="index.html">
-          <img src="/Images/BoraLogo.png" width="48" height="48" alt="BoraLogo"/>
-
-          </a>
-           <ul>
-           <li><a href="index.html">Home</a></li>
-            <li><a href="donate.html">About Us </a></li>
-            <li><a href="essentials.html">Essentials</a></li>
-           <li><a href="ways-to-give.html">WaysToGive</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="impacts.html">Impacts</a></li>
-             <li><a href="contact.html">Contact</a></li>
+<body>
+  <!-- === Navigation === -->
+  <header>
+    <nav>
+      <a class="brand" href="index.html">
+        <img src="Images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="essentials.html">Essentials</a></li>
+        <li><a href="ways-to-give.html">Ways To Give</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-         <hr>
-    </header>
-<body>
+  </header>
 
-  <!-- Page heading -->
-  <h1>What We Need</h1>
+  <!-- === Main Content === -->
+  <main>
+    <h1>What We Need</h1>
 
-  <!-- Donation essentials table -->
-  <table border="1" width="100%">
-    <thead>
-      <!-- Table headings  -->
-      <tr>
-        <th>Items</th>
-        <th>Size</th>
-        <th>Note</th>
-        <th>Toiletries</th>
-        <th>Multi-Purpose Cleaner</th>
-        <th>Food</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Table rows -->
-      <tr>
-        <td>Sports and School Shoes (boys and girls)</td>
-        <td>UK Kids/Youth sizes 10-5</td>
-        <td>Donors can provide new or used shoes, which are in useable/clean condition</td>
-        <td>Sanitary pads and Toilet paper</td>
-        <td>Dish Soap and Laundry Detergent</td>
-        <td>Canned Food</td>
-      </tr>
+    <!-- Essentials Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Items</th>
+          <th>Size</th>
+          <th>Note</th>
+          <th>Toiletries</th>
+          <th>Multi-Purpose Cleaner</th>
+          <th>Food</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sports and School Shoes (boys and girls)</td>
+          <td>UK Kids/Youth sizes 10–5</td>
+          <td>New or clean used shoes</td>
+          <td>Sanitary pads, Toilet paper</td>
+          <td>Dish Soap, Laundry Detergent</td>
+          <td>Canned Food</td>
+        </tr>
+        <tr>
+          <td>Jackets and Blankets</td>
+          <td>Small–Large</td>
+          <td>Keep kids warm at night</td>
+          <td>Toothbrushes, Toothpaste</td>
+          <td>Toilet Bowl Cleaner</td>
+          <td>Dry Grains</td>
+        </tr>
+        <tr>
+          <td>Baby & Girls Clothing and Toys</td>
+          <td>Age 6–15</td>
+          <td>New or clean used items</td>
+          <td>Vaseline, Bathing soap</td>
+          <td>Baby wipes, Dustbin bags</td>
+          <td>Shelf-Stable Milk, Snacks</td>
+        </tr>
+      </tbody>
+    </table>
 
-      <tr>
-        <td>Jackets and Blankets</td>
-        <td>Small-Large (blanket size)</td>
-        <td>Items must ensure that sheltered kids stay warm at night</td>
-        <td>Toothbrushes and Toothpaste</td>
-        <td>Toilet Bowl Cleaner</td>
-        <td>Dry Grains</td>
-      </tr>
+    <img src="Images/donate.png" width="150" height="150" alt="Donate image" />
 
-      <tr>
-        <td>Baby and Girls Clothing and Toys</td>
-        <td>Age 6-15</td>
-        <td>Any form of clothing which are new or useable/clean condition</td>
-        <td>Vaseline and Bathing soap</td>
-        <td>Baby wipes and Dustbin bags</td>
-        <td>Shelf-Stable Milk and Snacks</td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>Why Essentials Matter</h2>
+    <p>
+      Donations play a vital role in improving the lives of vulnerable children and families.
+      They help meet basic needs, provide comfort, and create a sense of dignity and security.
+      Beyond addressing immediate challenges, these contributions bring hope, show care and compassion,
+      and support healthier, more stable communities.
+    </p>
 
+    <img src="Images/good2.png" width="150" height="100" alt="Essentials image" />
 
-  <img src="/Images/donate.png" width="150" height="150" alt="Donate image"/>
-  
+    <p><a href="ways-to-give.html">Ways to Give</a></p>
+  </main>
 
-  <h2>Essentials provide</h2>
-  <p> Donations are a vital role in improving the lives of vulnerable children and families. 
-    They help to meet basic needs, provide comfort, and create a sense of dignity and security for those facing difficult circumstances.
-     Beyond addressing immediate challenges, these contributions bring hope, show care and compassion, and support healthier and more stable communities</p>
-
- <img src="/Images/good2.png" width="150" height="100" alt="Donate image"/>
-
-    <p><a href="WaystoGive.html">Ways to Give</a></p>
-    <hr>
-
- <footer>
-          <!-- Social media links -->
-    <footer>
-        <header>
-            <h3>Our social media </h3>
-        </header>
-        <a href="https://www.instagram.com/accounts/login/?hl=en"target="_blank">
-            <img src="/Images/insta.png" style="width: 30px; height: 32px;"/>
-        </a>
-         <a href="https://www.facebook.com/login.php"target="_blank">
-            <img src="/Images/facebook.png" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://https://api.linkedin.com/login"target="_blank">
-            <img src="/Images/linkIn.png" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://web.whatsapp.com/"target="_blank">
-            <img src="/Images/whatsApp.png" style="width: 30px; height: 32px;"/>
-        </a><hr>
-        
-    
-
-    </footer>
-    
+  <!-- === Footer === -->
+  <footer>
+    <h3>Our social media</h3>
+    <div class="social">
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
+        <img src="Images/insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
+        <img src="Images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+        <img src="Images/linkIn.png" alt="LinkedIn" />
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
+        <img src="Images/whatsApp.png" alt="WhatsApp" />
+      </a>
+    </div>
+    <p>&copy; 2024 Bora Foundation. All rights reserved.</p>
+  </footer>
 </body>
 </html>

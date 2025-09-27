@@ -1,78 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impacts</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impacts – Bora Foundation</title>
+   <link rel="stylesheet" href="styles.css"> 
+
+  <style>
+    /* === Base layout === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #1a4c48;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* === Header and Navigation === */
+    header {
+      background: #1a4c48;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      gap: 16px;
+      background: #1a4c48;
+    }
+
+    nav .brand img {
+      height: 48px;
+      width: 48px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    main {
+      flex: 1;
+      padding: 32px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    section p {
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    section img {
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    /* === Footer === */
+    footer {
+      background: #1a4c48;
+      text-align: center;
+      padding: 24px 12px;
+      color: white;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    .social {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 32px;
+    }
+
+    /* === Responsive Nav === */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav .brand {
+        margin-bottom: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul a {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-<body><header>
-        <nav>
-            <a href="index.html">
-            <img src="/Images/BoraLogo.png" width="48" height="48" alt="BoraLogo"/>
 
-          </a>
-           <ul>
-           <li><a href="index.html">Home</a></li>
-            <li><a href="donate.html">About Us </a></li>
-            <li><a href="essentials.html">Essentials</a></li>
-           <li><a href="ways-to-give.html">WaysToGive</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="impacts.html">Impacts</a></li>
-             <li><a href="contact.html">Contact</a></li>
+<body>
+  <!-- === Navigation === -->
+  <header>
+    <nav>
+      <a class="brand" href="index.html">
+        <img src="Images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="essentials.html">Essentials</a></li>
+        <li><a href="ways-to-give.html">Ways To Give</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-        <hr>
+  </header>
 
-  <h1>Impact of Donation</h1>
+  <!-- === Main Content === -->
+  <main>
+    <h1>Impact of Donation</h1>
 
-  <section>
-    <img src="Images/" width="240" alt="Young girl named Esther sits cross-legged reading a book with a teddy bear beside her in a cozy, warmly lit room. The atmosphere feels hopeful and inspiring.">
-    <p><b>Esther</b></p>
-    <p>
-      Donations bring the magic of reading to life. 
-      Esther shares, "Before the shelter, I had no books. Now, I read daily with my teddy, and I dream of becoming a doctor."
-    </p>
-  </section>
+    <section>
+      <img src="Images/childreading.png" width="240" alt="Young girl named Esther sits cross-legged reading a book with a teddy bear beside her in a cozy, warmly lit room." />
+      <p><strong>Esther</strong></p>
+      <p>
+        Donations bring the magic of reading to life.<br />
+        Esther shares, "Before the shelter, I had no books. Now, I read daily with my teddy, and I dream of becoming a doctor."
+      </p>
+    </section>
 
-  <section>
-    <img src="Images/smile.jpg" width="240" alt="Noah and Oliver smiling">
-    <p><b>Noah and Oliver</b></p>
-    <p>
-      Your support helps children discover friendship and confidence. 
-      Noah and Oliver say, "We used to feel invisible, but now we laugh, play, and look after each other as siblings."
-    </p>
-  </section>
+    <section>
+      <img src="Images/smile.png" width="240" alt="Noah and Oliver smiling" />
+      <p><strong>Noah and Oliver</strong></p>
+      <p>
+        Your support helps children discover friendship and confidence.<br />
+        Noah and Oliver say, "We used to feel invisible, but now we laugh, play, and look after each other as siblings."
+      </p>
+    </section>
 
-  <section>
-    <img src="Images/ridingbike.jpg" width="240" alt="Fabio and Jady riding a bike">
-    <p><b>Fabio and Jady</b></p>
-    <p>
-      "Donations like this bike have had a huge impact," one child shares. "We share everything, even our bike. 
-      Thanks to your generosity, we feel seen and supported."
-    </p>
-    <hr>
-  </section>
-   <!-- Social media links -->
+    <section>
+      <img src="Images/ridingbike.png" width="240" alt="Fabio and Jady riding a bike" />
+      <p><strong>Fabio and Jady</strong></p>
+      <p>
+        "Donations like this bike have had a huge impact," one child shares.<br />
+        "We share everything, even our bike. Thanks to your generosity, we feel seen and supported."
+      </p>
+    </section>
+  </main>
+
+  <!-- === Footer === -->
   <footer>
-        <header>
-            <h3>Our social media </h3>
-        </header>
-        <a href="https://www.instagram.com/accounts/login/?hl=en"target="_blank">
-            <img src="Images/insta.jpg" style="width: 30px; height: 32px;"/>
-        </a>
-         <a href="https://www.facebook.com/login.php"target="_blank">
-            <img src="Images/facebook.jpg" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://https://api.linkedin.com/login"target="_blank">
-            <img src="Images/linkedin.png" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://web.whatsapp.com/"target="_blank">
-            <img src="Images/Whatsapp.png" style="width: 30px; height: 32px;"/>
-        </a><hr>
-        
-    
-
-    </footer>
-    
-
+    <h3>Our social media</h3>
+    <div class="social">
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
+        <img src="Images/insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
+        <img src="Images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+        <img src="Images/linkedin.webp" alt="LinkedIn" />
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
+        <img src="Images/Whatsapp.png" alt="WhatsApp" />
+      </a>
+    </div>
+    <p>&copy; 2025 Bora Foundation. All rights reserved.</p>
+  </footer>
 </body>
 </html>

@@ -1,84 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>about</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Bora Foundation</title>
+   <link rel="stylesheet" href="styles.css"> 
+
+  <style>
+    /* === Base layout === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* === Header and Navigation === */
+    header {
+      background: #1a4c48;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      gap: 16px;
+    }
+
+    nav .brand img {
+      height: 48px;
+      width: 48px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    main {
+      flex: 1;
+      padding: 32px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      color: #1a4c48;
+    }
+
+    main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+
+    main h2, main h3, main h4 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #1a4c48;
+    }
+
+    main p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    #imageblock {
+      margin: 24px 0;
+    }
+
+    /* === Footer === */
+    footer {
+      background: #1a4c48;
+      text-align: center;
+      padding: 24px 12px;
+      color: white;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    .social {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 32px;
+    }
+
+    /* === Responsive Nav === */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      nav .brand {
+        margin-bottom: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul a {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 10px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <a href="index.html">
-            <img src="/Images/BoraLogo.png" width="48" height="48" alt="BoraLogo"/>
+  <!-- === Header & Navigation === -->
+  <header>
+    <nav>
+      <a class="brand" href="index.html">
+        <img src="Images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="essentials.html">Essentials</a></li>
+        <li><a href="ways-to-give.html">Ways To Give</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            </a>
-           <ul>
-           <li><a href="index.html">Home</a></li>
-            <li><a href="donate.html">About Us </a></li>
-            <li><a href="essentials.html">Essentials</a></li>
-           <li><a href="ways-to-give.html">WaysToGive</a></li>
-            <li><a href="donate.html">Donate</a></li>
-            <li><a href="impacts.html">Impacts</a></li>
-             <li><a href="contact.html">Contact</a></li>
-           </ul>
-        </nav> 
-        <hr>
-    </header>
+  <!-- === Main Content === -->
+  <main>
+    <h1>About Us</h1>
+    <p>
+      Bora Foundation was established in 2018 by Bora Johnson. It is a non-profit organisation dedicated to supporting orphaned children.
+      The Foundation embodies Bora Johnson's visionary commitment to uplifting the most vulnerable members of society, leaving a legacy of hope and empowerment.
+    </p>
 
-  <h1>About Us</h1>
-
-  
-  <p>Bora Foundation was established in 2018 by Bora Johnson, it  is a non-profit organisation dedicated on supporting orphaned children. 
-    The Foundation embodies Bora Johnson's visionary commitment to uplifting the most vulnerable members of society, leaving a legacy of hope and empowerment.</p>
     <div id="imageblock">
-   <img src="/Images/about.png" width="1000px" height="auto" alt="Home image"/>
+      <img src="Images/about.png" alt="Children supported by Bora Foundation" />
     </div>
-    
 
-  <h2>
-    Vision
-  </h2>
-<p>Bora Foundation’s vision is to create a place the where orphaned children are not just survivors, but thrivers.  where they are given the love, care, and opportunities to unlock their potential and become beacons of hope in the community </p>
+    <h2>Vision</h2>
+    <p>
+      Bora Foundation’s vision is to create a place where orphaned children are not just survivors, but thrivers —
+      where they are given the love, care, and opportunities to unlock their potential and become beacons of hope in the community.
+    </p>
 
-<h3>
-    Mission
-  </h3>
-<p>The foundation will continue to prioritise the well-being of every child through education, psychological support, and healthcare, in order to encourage and build their futures."</p>
+    <h3>Mission</h3>
+    <p>
+      The foundation will continue to prioritise the well-being of every child through education, psychological support, and healthcare,
+      in order to encourage and build their futures.
+    </p>
 
-  <h4>
-    The Impact of Your Donations
-  </h4>
-<p>Bora Foundation is dedicated to  creating brighter futures for orphaned children by providing safe shelter, nutritious food, access to education, and psychological support. 
-    Guided by our mission to nurture and empower vulnerable young lives, we strive to make a meaningful difference in their  lives.<p>
-        
-        <p><a href="Essentials.html">Essentials</a></p>
-        <hrf
-    
->
-    <!-- Social media links -->
-    <footer>
-        <header>
-            <h3>Our social media </h3>
-        </header>
-        <a href="https://www.instagram.com/accounts/login/?hl=en"target="_blank">
-            <img src="/Images/insta.png" style="width: 30px; height: 32px;"/>
-        </a>
-         <a href="https://www.facebook.com/login.php"target="_blank">
-            <img src="/Images/facebook.png" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://https://api.linkedin.com/login"target="_blank">
-            <img src="/Images/linkIn.png" style="width: 30px; height: 32px;"/>
-        </a>
-        <a href="https://web.whatsapp.com/"target="_blank">
-            <img src="/Images/whatsApp.png" style="width: 30px; height: 32px;"/>
-        </a><hr>
-        
-      
-    </footer>
-    
+    <h4>The Impact of Your Donations</h4>
+    <p>
+      Bora Foundation is dedicated to creating brighter futures for orphaned children by providing safe shelter, nutritious food,
+      access to education, and psychological support. Guided by our mission to nurture and empower vulnerable young lives,
+      we strive to make a meaningful difference in their lives.
+    </p>
 
+    <p><a href="essentials.html">Explore Essentials</a></p>
+  </main>
 
-    
+  <!-- === Footer === -->
+  <footer>
+    <h3>Our social media</h3>
+    <div class="social">
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
+        <img src="Images/insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
+        <img src="Images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+        <img src="Images/linkedin.webp" alt="LinkedIn" />
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
+        <img src="Images/whatsApp.png" alt="WhatsApp" />
+      </a>
+    </div>
+    <p>&copy; 2024 Bora Foundation. All rights reserved.</p>
+  </footer>
 </body>
 </html>
