@@ -8,155 +8,203 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* === Base layout === */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #1a4c48;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+/* ===== Base page setup (simple + brand color) ===== */
+:root { --brand:#1a4c48; }
+body{
+  margin:0; padding:0; font-family:Arial, sans-serif;
+  color:var(--brand); background:#fff; min-height:100vh; display:flex; flex-direction:column;
+}
+img{ max-width:100%; height:auto; display:block; }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+/* Header / nav (same look as your other pages) */
+header{ background:var(--brand); }
+nav{
+  display:flex; justify-content:space-between; align-items:center;
+  gap:16px; padding:12px 20px; background:var(--brand);
+}
+nav .brand img{ width:48px; height:48px; }
+nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:16px; }
+nav a{ color:#fff; text-decoration:none; font-weight:700; }
+nav a:hover{ text-decoration:underline; }
 
-    /* === Header and Navigation === */
-    header {
-      background: #1a4c48;
-    }
+/* Main layout */
+main{ flex:1; max-width:1000px; margin:0 auto; padding:32px 20px; }
+main h1, main h2{ text-align:center; color:var(--brand); font-weight:800; margin-bottom:20px; }
+main p{ line-height:1.75; margin:0 0 16px; }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      gap: 16px;
-      background: #1a4c48;
-    }
+/* ===== Essentials table (desktop) ===== */
+.table-wrap{
+  background:#f6faf9; border:2px solid #d7e7e4; border-radius:12px;
+  padding:10px; box-shadow:0 6px 18px rgba(0,0,0,.08);
+  margin-bottom:28px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+}
+.ess-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  min-width:780px; /* avoids cramped columns on mid screens */
+  font-size:1rem;
+}
+.ess-table caption{
+  caption-side:top; text-align:left; padding:6px 0 10px;
+  font-weight:800; color:var(--brand);
+}
+.ess-table thead th{
+  background:var(--brand); color:#fff; font-weight:700; text-align:left; padding:12px 14px;
+}
+.ess-table th + th, .ess-table td + td{ border-left:1px solid #e8f1ef; }
+.ess-table td{
+  background:#fff; padding:12px 14px; border-top:1px solid #e6efed; line-height:1.6;
+  white-space:normal; word-break:break-word;
+}
+.ess-table tbody tr:nth-child(odd) td{ background:#f9fcfb; }
+.ess-table tbody tr:hover td{ background:#eef7f5; }
 
-    nav .brand img {
-      height: 48px;
-      width: 48px;
-    }
+/* ===== Mobile stacked “cards” (single clean version) ===== */
+@media (max-width:900px){
+  .ess-table{ min-width:0; }
+  .ess-table thead{ display:none; }
+  .ess-table, .ess-table tbody, .ess-table tr, .ess-table td{ display:block; width:100%; }
+  .ess-table tr{
+    border:1px solid #e6efed; border-radius:12px; overflow:hidden;
+    background:#fff; margin:0 0 14px; box-shadow:0 4px 12px rgba(0,0,0,.04);
+  }
+  .ess-table td{ border:none; border-top:1px solid #eef4f3; padding:10px 12px; }
+  .ess-table td:first-child{ border-top:none; }
+  /* Label sits ABOVE value = never overlaps */
+  .ess-table td::before{
+    content:attr(data-label); display:block; margin-bottom:6px;
+    font-weight:800; color:var(--brand);
+  }
+}
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 16px;
-    }
+/* ===== Animated images under the table ===== */
+.ess-media{
+  display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0 8px; align-items:stretch;
+}
+.ess-pic{
+  width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,.08);
+  opacity:0; animation:fadeUp .7s ease-out forwards, floatY 6s ease-in-out infinite;
+}
+.ess-pic.right{ animation-delay:.15s, .4s; }
+@keyframes fadeUp{ from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+@keyframes floatY{ 0%{transform:translateY(0)} 50%{transform:translateY(-6px)} 100%{transform:translateY(0)} }
+@media (max-width:700px){ .ess-media{ grid-template-columns:1fr; } }
+@media (prefers-reduced-motion:reduce){ .ess-pic{ animation:none; opacity:1; } }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-    }
+/* CTA button */
+.cta-wrap{ text-align:center; margin:18px 0 6px; }
+.cta{
+  display:inline-block; padding:12px 20px; border-radius:10px; border:2px solid var(--brand);
+  background:var(--brand); color:#fff; font-weight:800; text-decoration:none;
+  transition:transform .2s, background .25s;
+}
+.cta:hover{ transform:translateY(-2px); background:#163f3b; }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+/* Footer */
+footer{ background:var(--brand); color:#fff; text-align:center; padding:24px 12px; }
+footer h3{ margin-bottom:12px; }
+.social{ display:inline-flex; gap:12px; align-items:center; margin-bottom:12px; }
+.social img{ width:30px; height:32px; }
 
-    /* === Main Content === */
-    main {
-      flex: 1;
-      padding: 32px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+/* Responsive nav */
+@media (max-width:768px){
+  nav{ flex-direction:column; text-align:center; }
+  nav .brand{ margin-bottom:15px; }
+  nav ul{ flex-direction:column; gap:10px; width:100%; }
+  nav ul a{ display:block; padding:10px 12px; border:1px solid rgba(255,255,255,.25); border-radius:10px; }
+}
+.ess-table caption{
+  caption-side: top;
+  text-align: center;
+  font-weight: 800;
+  color: #1a4c48;
+  margin: 6px 0 10px;
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  white-space: normal;
+  word-break: normal;
+}
 
-    main h1 {
-      font-size: 2.5rem;
-      margin-bottom: 24px;
-    }
+@media (max-width: 900px){
+  .ess-table caption{ display: none; }
+}
+/* Style for section headings */
+main h2 {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  color: #1a4c48;
+  font-weight: 800;
+  margin: 30px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
 
-    main h2 {
-      margin-top: 32px;
-      margin-bottom: 12px;
-    }
+/* Add a decorative underline below the heading */
+main h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #1a4c48;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
 
-    main p {
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
+/* Style for the paragraph under the heading */
+main .essentials-text {
+  max-width: 850px;
+  margin: 0 auto 25px;
+  text-align: center;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.9;
+  color: #2c2c2c;
+  background: #f6faf9;
+  padding: 18px 22px;
+  border-left: 5px solid #1a4c48;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 24px;
-    }
+/* Subtle fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* === Interactivity for the essentials-text card === */
+.essentials-text {
+  max-width: 850px;
+  margin: 0 auto 25px;
+  text-align: center;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.9;
+  color: #2c2c2c;
+  background: #f6faf9;
+  padding: 18px 22px;
+  border-left: 5px solid #1a4c48;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.06);
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
-    }
+/* Hover lift effect */
+.essentials-text:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
 
-    th {
-      background-color: #f0f0f0;
-    }
+/* Subtle fade-in animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    /* === Footer === */
-    footer {
-      background: #1a4c48;
-      text-align: center;
-      padding: 24px 12px;
-      color: white;
-    }
 
-    footer h3 {
-      margin-bottom: 12px;
-    }
+</style>
 
-    .social {
-      display: inline-flex;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .social img {
-      width: 30px;
-      height: 32px;
-    }
-
-    /* === Responsive Nav === */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      nav .brand {
-        margin-bottom: 15px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-      }
-
-      nav ul li {
-        width: 100%;
-      }
-
-      nav ul a {
-        display: block;
-        padding: 10px 12px;
-        border: 1px solid rgba(255,255,255,0.25);
-        border-radius: 10px;
-        text-align: center;
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -182,59 +230,69 @@
   <main>
     <h1>What We Need</h1>
 
-    <!-- Essentials Table -->
-    <table>
-      <thead>
-        <tr>
-          <th>Items</th>
-          <th>Size</th>
-          <th>Note</th>
-          <th>Toiletries</th>
-          <th>Multi-Purpose Cleaner</th>
-          <th>Food</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Sports and School Shoes (boys and girls)</td>
-          <td>UK Kids/Youth sizes 10–5</td>
-          <td>New or clean used shoes</td>
-          <td>Sanitary pads, Toilet paper</td>
-          <td>Dish Soap, Laundry Detergent</td>
-          <td>Canned Food</td>
-        </tr>
-        <tr>
-          <td>Jackets and Blankets</td>
-          <td>Small–Large</td>
-          <td>Keep kids warm at night</td>
-          <td>Toothbrushes, Toothpaste</td>
-          <td>Toilet Bowl Cleaner</td>
-          <td>Dry Grains</td>
-        </tr>
-        <tr>
-          <td>Baby & Girls Clothing and Toys</td>
-          <td>Age 6–15</td>
-          <td>New or clean used items</td>
-          <td>Vaseline, Bathing soap</td>
-          <td>Baby wipes, Dustbin bags</td>
-          <td>Shelf-Stable Milk, Snacks</td>
-        </tr>
-      </tbody>
-    </table>
+   <div class="table-wrap">
+  <table class="ess-table" aria-label="Essentials needed">
+    <caption>Essentials we currently need</caption>
+    <thead>
+      <tr>
+        <th>Items</th>
+        <th>Size</th>
+        <th>Note</th>
+        <th>Toiletries</th>
+        <th>Multi-Purpose Cleaner</th>
+        <th>Food</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Items">Sports and School Shoes (boys and girls)</td>
+        <td data-label="Size">UK Kids/Youth sizes 10–5</td>
+        <td data-label="Note">New or clean used shoes</td>
+        <td data-label="Toiletries">Sanitary pads, Toilet paper</td>
+        <td data-label="Multi-Purpose Cleaner">Dish Soap, Laundry Detergent</td>
+        <td data-label="Food">Canned Food</td>
+      </tr>
+      <tr>
+        <td data-label="Items">Jackets and Blankets</td>
+        <td data-label="Size">Small–Large</td>
+        <td data-label="Note">Keep kids warm at night</td>
+        <td data-label="Toiletries">Toothbrushes, Toothpaste</td>
+        <td data-label="Multi-Purpose Cleaner">Toilet Bowl Cleaner</td>
+        <td data-label="Food">Dry Grains</td>
+      </tr>
+      <tr>
+        <td data-label="Items">Baby & Girls Clothing and Toys</td>
+        <td data-label="Size">Age 6–15</td>
+        <td data-label="Note">New or clean used items</td>
+        <td data-label="Toiletries">Vaseline, Bathing soap</td>
+        <td data-label="Multi-Purpose Cleaner">Baby wipes, Dustbin bags</td>
+        <td data-label="Food">Shelf-Stable Milk, Snacks</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-    <img src="images/donate.png" width="150" height="150" alt="Donate image" />
+
+   <!-- Animated images under the table -->
+<div class="ess-media">
+  <img class="ess-pic left"  src="images/donate.png" alt="Donate illustration">
+  <img class="ess-pic right" src="images/kids.png"   alt="Children illustration">
+</div>
+
 
     <h2>Why Essentials Matter</h2>
-    <p>
-      Donations play a vital role in improving the lives of vulnerable children and families.
-      They help meet basic needs, provide comfort, and create a sense of dignity and security.
-      Beyond addressing immediate challenges, these contributions bring hope, show care and compassion,
-      and support healthier, more stable communities.
-    </p>
+<p class="essentials-text">
+  Donations play a vital role in improving the lives of vulnerable children and families.
+  They help meet basic needs, provide comfort, and create a sense of dignity and security.
+  Beyond addressing immediate challenges, these contributions bring hope, show care and compassion,
+  and support healthier, more stable communities.
+</p>
 
-    <img src="images/goods.png" width="150" height="100" alt="Essentials image" />
+  
+    <div class="cta-wrap">
+  <a class="cta" href="ways-to-give.html">Ways to Give</a>
+</div>
 
-    <p><a href="ways-to-give.html">Ways to Give</a></p>
   </main>
 
   <!-- === Footer === -->
