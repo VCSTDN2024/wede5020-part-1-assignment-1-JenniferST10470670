@@ -5,147 +5,310 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donate – Bora Foundation</title>
    
-  <link rel="stylesheet" href="styles.css"> 
+  <!-- External stylesheet  -->
+  <link rel="stylesheet" href="style.css"> 
 
-  <style>
-    /* === Base layout === */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #1a4c48;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+ <style>
+  /* === Base layout for the whole page === */
+  body {
+    margin: 0; /* remove default spacing */
+    padding: 0;
+    font-family: Arial, sans-serif; /* simple and clean font */
+    background-color: #ffffff; /* white background */
+    color: #1a4c48; /* Bora green text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* full screen height */
+  }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+  img {
+    max-width: 100%; /* make images responsive */
+    height: auto;
+    display: block;
+  }
 
-    /* === Header and Navigation === */
-    header {
-      background: #1a4c48;
-    }
+  /* === Header and Navigation === */
+  header {
+    background: #1a4c48; /* Bora green header */
+  }
 
+  nav {
+    display: flex;
+    justify-content: space-between; /* space between logo and links */
+    align-items: center;
+    padding: 12px 20px;
+    gap: 16px;
+    background: #1a4c48;
+  }
+
+  nav .brand img {
+    height: 48px;
+    width: 48px;
+  }
+
+  nav ul {
+    list-style: none; /* remove bullets */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 16px;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  nav a:hover {
+    text-decoration: underline; /* underline when hovered */
+  }
+
+  /* === Main Content === */
+  main {
+    flex: 1;
+    padding: 32px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+  }
+
+  main h4 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  main ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+
+  main p {
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  /* === Footer === */
+  footer {
+    background: #1a4c48;
+    text-align: center;
+    padding: 24px 12px;
+    color: white;
+  }
+
+  footer h3 {
+    margin-bottom: 12px;
+  }
+
+  .social {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .social img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* === Responsive Nav for mobile === */
+  @media (max-width: 768px) {
     nav {
-      display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 12px 20px;
-      gap: 16px;
-      background: #1a4c48;
+      text-align: center;
     }
 
-    nav .brand img {
-      height: 48px;
-      width: 48px;
+    nav .brand {
+      margin-bottom: 15px;
     }
 
     nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 16px;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
+    nav ul li {
+      width: 100%;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* === Main Content === */
-    main {
-      flex: 1;
-      padding: 32px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    main h1 {
-      font-size: 2.5rem;
-      margin-bottom: 24px;
-    }
-
-    main h4 {
-      margin-top: 32px;
-      margin-bottom: 12px;
-    }
-
-    main ul {
-      padding-left: 20px;
-      margin-bottom: 16px;
-    }
-
-    main p {
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    /* === Footer === */
-    footer {
-      background: #1a4c48;
+    nav ul a {
+      display: block;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
       text-align: center;
-      padding: 24px 12px;
-      color: white;
     }
+  }
 
-    footer h3 {
-      margin-bottom: 12px;
-    }
+  /* === Donate Page Styling === */
 
-    .social {
-      display: inline-flex;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
+  /* Center and animate the main title */
+  main > h1 {
+    text-align: center;
+    color: #1a4c48;
+    font-weight: 800;
+    letter-spacing: .4px;
+    margin: 0 0 16px;
+    animation: donateTitle 700ms ease-out forwards;
+    opacity: 0;
+  }
 
-    .social img {
-      width: 30px;
-      height: 30px;
-    }
+  @keyframes donateTitle {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 
-    /* === Responsive Nav === */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+  /* Each donate section becomes a card */
+  main > section {
+    background: #f6faf9;
+    border: 2px solid #d7e7e4;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 22px rgba(0,0,0,.06);
+    margin: 18px 0;
+  }
 
-      nav .brand {
-        margin-bottom: 15px;
-      }
+  /* Section headings inside cards*/
+  main > section h4 {
+    margin: 0 0 12px;
+    color: #1a4c48;
+    font-weight: 800;
+    letter-spacing: .2px;
+  }
 
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-      }
+  /* Info rows with labels */
+  main > section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-      nav ul li {
-        width: 100%;
-      }
+  main > section ul li {
+    background: #fff;
+    border: 1px solid #e0ebe8;
+    border-left: 6px solid #1a4c48;
+    border-radius: 10px;
+    padding: 10px 12px;
+    line-height: 1.7;
+  }
 
-      nav ul a {
-        display: block;
-        padding: 10px 12px;
-        border: 1px solid rgba(255,255,255,0.25);
-        border-radius: 10px;
-        text-align: center;
-      }
-    }
-  </style>
+  main > section ul li strong {
+    display: block;
+    color: #1a4c48;
+    font-weight: 800;
+  }
+
+  /* Notes inside sections */
+  main > section p {
+    margin: 0 0 10px;
+    line-height: 1.75;
+  }
+
+  main > section p strong {
+    display: block;
+    color: #1a4c48;
+    margin-bottom: 4px;
+  }
+
+  /* Buttons and links */
+  main > section a {
+    color: #1a4c48;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  main > section p:last-child a,
+  main > section .button {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 6px;
+    padding: 12px 18px;
+    border: 2px solid #1a4c48;
+    color: #fff;
+    background: #1a4c48;
+    border-radius: 10px;
+    font-weight: 800;
+    transition: transform .2s, background .25s;
+  }
+
+  main > section p:last-child a:hover,
+  main > section .button:hover {
+    transform: translateY(-2px);
+    background: #163f3b;
+  }
+
+  /* Small icons (like logos) */
+  .icon-24 {
+    width: 24px;
+    height: 24px;
+    vertical-align: -4px;
+  }
+
+  /* Mobile tweaks for donate cards */
+  @media (max-width: 768px) {
+    main { padding: 24px 16px; }
+    main > section { padding: 16px; }
+    main > section ul li { padding: 10px; }
+  }
+
+  /* Smooth scroll for anchor links */
+  html { scroll-behavior: smooth; }
+
+  /* Prevent header from hiding anchor targets */
+  #banking, #shipping {
+    scroll-margin-top: 90px;
+  }
+
+  /* Highlight target section when jumped to */
+  :target {
+    animation: targetPop 900ms ease-out forwards, targetGlow 1600ms ease-out;
+    outline: 3px solid rgba(26,76,72,.35);
+    outline-offset: 2px;
+  }
+
+  @keyframes targetPop {
+    0%   { transform: scale(.985); background: #e9f4f2; }
+    100% { transform: scale(1); background: #f6faf9; }
+  }
+
+  @keyframes targetGlow {
+    0%   { box-shadow: 0 0 0 0 rgba(26,76,72,.35); }
+    70%  { box-shadow: 0 0 0 14px rgba(26,76,72,0); }
+    100% { box-shadow: 0 0 0 0 rgba(26,76,72,0); }
+  }
+
+  /* Center button container */
+  .center-button {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .center-button a {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #1a4c48;
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .3s, transform .2s;
+  }
+
+  .center-button a:hover {
+    background: #163f3b;
+    transform: translateY(-2px);
+  }
+</style>
 </head>
 
 <body>
@@ -169,19 +332,19 @@
 
   <!-- === Main Content === -->
   <main>
-    <h1>Ways to Give</h1>
+    <h1>Donation Methods </h1>
 
     <!-- Banking Details -->
-    <section>
+    <section id="banking">
       <h4>Banking Details</h4>
       <ul>
-        <li><strong>Bank Name:</strong> RMB Private Bank: Juristic</li>
-        <li><strong>Account Number:</strong> 62513164128</li>
-        <li><strong>Branch Code:</strong> 261251</li>
-        <li><strong>SWIFT Code:</strong> FIRNZAJJ</li>
+        <li><b>Bank Name:</b> RMB Private Bank</li>
+        <li><b>Account Number:</b> 62513164128</li>
+        <li><b>Branch Code:</b> 261251</li>
+        <li><b>SWIFT Code:</b> FIRNZAJJ</li>
       </ul>
       <p>
-        <strong>Note:</strong> You may donate using our trusted app, Payfast, PayPal, or EFT using the banking details above.
+        <b>Note:</b> You may donate using our trusted app, Payfast, PayPal, or EFT using the banking details above.
         All donations are deeply appreciated.
       </p>
     </section>
@@ -190,17 +353,20 @@
     <section>
       <h4>Drop-off / Shipping</h4>
       <ul>
-        <li><strong>Shipping Address:</strong> Bora Foundation, P.O. Box 1942, Cape Town, 8000, South Africa</li>
-        <li><strong>Email:</strong> <a href="mailto:info@borafoundation.com">info@borafoundation.com</a></li>
-        <li><strong>Telephone:</strong> +27 (0)11 577 5600</li>
-        <li><strong>WhatsApp:</strong> +27 624753106</li>
-        <li><strong>Recommended Couriers:</strong> DHL and FedEx</li>
+        <li><b>Shipping Address:</b> Bora Foundation, P.O. Box 1942, Cape Town, 8000, South Africa</li>
+        <li><b>Email:</b> <a href="mailto:info@borafoundation.com">info@borafoundation.com</a></li>
+        <li><b>Telephone:</b> +27 (0)11 577 5600</li>
+        <li><b>WhatsApp:</b> +27 624753106</li>
+        <li><b>Recommended Couriers:</b> DHL and FedEx</li>
       </ul>
       <p>
-        <strong>Note:</strong> Donated goods may be delivered to our drop-off point using the recommended couriers or another service of your choice.
+        <b>Note:</b> Donated goods may be delivered to our drop-off point using the recommended couriers or another service of your choice.
         Please contact us with your shipping details to coordinate delivery.
       </p>
-      <p><a href="contact.html">Contact Us</a></p>
+      <div class="center-button">
+  <a href="impacts.html">Impacts</a>
+</div>
+
     </section>
   </main>
 
