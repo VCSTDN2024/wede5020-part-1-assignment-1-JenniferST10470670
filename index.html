@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bora Foundation</title>
 
-  <!-- External stylesheet (if you decide to split later) -->
-  <link rel="stylesheet" href="styles.css"> 
+  <!-- External stylesheet  -->
+  <link rel="stylesheet" href="style.css">
+
 
   <style>
     /* === Base layout === */
@@ -65,14 +66,14 @@
     }
      /* === Call-to-action button === */
     .cta {
-      margin-top: 24px;           /* space above the button */
-      text-align: center;         /* center the button */
+      margin-top: 24px;           
+      text-align: center;         
     }
 
     .cta a {
       display: inline-block;
       padding: 12px 20px;
-      background: #ffffff;        /*  white background */
+      background: #ffffff;        
       color: #1a4c48;             
       border: 2px solid white;  
       border-radius: 8px;
@@ -82,8 +83,8 @@
     }
 
     .cta a:hover {
-      background: #1a4c48;        /* green background on hover */
-      color: #ffffff;             /* white text on hover */
+      background: #1a4c48;        
+      color: #ffffff;             
       transform: translateY(-2px); 
     }
 
@@ -98,12 +99,13 @@
       margin: 32px auto;
       text-align: center;
     }
+/* Make sure all text in the hero section stays white */
 
     .hero h1,
     .hero p,
     .hero .tagline,
     .hero .lead {
-      color: #ffffff !important; /* force white */
+      color: #ffffff !important; 
     }
 
     .hero h1 {
@@ -132,7 +134,7 @@
 
     /* === Animations === */
     @keyframes heroSlideIn {
-      0% { opacity: 0; transform: translateY(-16px); }
+      0% { opacity: 0; transform: translateY(-15px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
@@ -151,7 +153,68 @@
       to   { text-shadow: 0 0 10px rgba(255,255,255,0.35); }
     }
 
-    /* === Main Content === */
+  /* === Image entrance + gentle Ken Burns === */
+.hero img {
+  opacity: 0;
+  transform: translateY(14px) scale(1);             
+  animation:
+    imgIntro 800ms ease-out forwards,                
+    kenBurns 18s ease-in-out 900ms infinite alternate; 
+  border-radius: 6px;                                
+}
+
+/*  two images so they don't move at the same time */
+.hero img:first-of-type { 
+  animation-delay: 200ms, 900ms; }
+
+  .hero img:last-of-type  { 
+  animation-delay: 450ms, 1150ms; }
+
+/* Hover: tiny lift for interactivity (desktop) */
+.hero img:hover {
+  transform: translateY(-2px) scale(1.02);
+  transition: transform .25s ease;
+}
+
+/* Keyframes */
+@keyframes imgIntro {
+  0%   { opacity: 0; transform: translateY(14px) scale(1); }
+  100% { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+@keyframes kenBurns {
+  0%   { transform: translateY(0)   scale(1);    }
+  100% { transform: translateY(-2%) scale(1.05); }
+
+}
+/* === Special animation for the second image (hands) === */
+
+.hero img:last-of-type {
+  margin-top: 30px;
+
+  /* start its animations a little later than the first image */
+  animation-delay: 600ms, 1300ms;
+  animation-name: imgIntroHands, kenBurns;
+}
+
+/* === Custom animation for hands image === */
+
+@keyframes imgIntroHands {
+  0%   { opacity: 0; transform: translateY(40px) scale(1); }
+  100% { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero img {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+}
+  /* === Main Content === */
     main {
       flex: 1;
       padding: 24px 20px;
@@ -259,21 +322,21 @@
     </nav>
   </header>
 
-  <!-- === Main Hero Section === -->
+  <!-- === Main Hero Section  with the foundation history === -->
   <main>
     <section class="hero">
       <h1 class="animate-title">Bora Foundation</h1>
       <p class="tagline animate-quote">“Shining a Light, Building Brighter Futures”</p>
       <p class="lead">
         Bora Foundation's mission is to provide safe shelter, education, and support to
-        shine a light in their lives by helping them build brighter futures. The Foundation
-        embodies Bora Johnson's visionary commitment to uplifting the most vulnerable
+        shine a light in their lives by helping them build brighter futures. 
+        The Foundation embodies Bora Johnson's visionary commitment to uplifting the most vulnerable
         members of society, leaving a lasting legacy of hope and empowerment.
-      </p>
+        </p>
 
       <!-- Images that support the message -->
-<img src="Images/hands.png" alt="Helping hands" />
-<img src="Images/child.png" alt="Child smiling" style="margin-top:16px;" />
+<img src="images/child.png" alt="Child smiling" style="margin-top:16px;" />
+<img src="images/hands.png" alt="Helping hands" />
 
 <!-- LEARN MORE button  -->
 <div class="cta">
@@ -284,7 +347,7 @@
     </section>
   </main>
 
-  <!-- === Footer === -->
+  <!-- === Footer that contains  our social media  === -->
   <footer>
     <h3>Our social media</h3>
     <div class="social">
