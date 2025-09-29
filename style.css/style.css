@@ -1,64 +1,60 @@
-/* ---------- CSS RESET ---------- */
-/* This clears out default browser styles so everything starts clean */
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- BASE STYLES ---------- */
-/* General body settings: font, size, background, and text colour */
+/* Basic page styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background: #ffffff;       /* plain white background */
-  color: #2c2c2c;            /* dark grey text for readability */
+  background: #ffffff;
+  color: #2c2c2c;
 }
 
-/* ---------- NAVBAR ---------- */
-/* Main nav bar styling: layout, spacing, and sticky positioning */
+/* Navbar layout */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff; /* white nav background */
+  background-color: #ffffff;
   padding: 15px 30px;
-  box-shadow: 0 2px 6px rgb(0, 0, 0, 0.08); /* soft shadow */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   position: sticky;
   top: 0;
-  z-index: 1000; /* keeps nav on top */
+  z-index: 1000;
 }
 
-/* Logo image size */
+/* Logo size */
 .logo img {
   height: 60px;
   width: auto;
 }
 
-/* Navigation links layout */
+/* Nav links layout */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 25px; /* space between links */
+  gap: 25px;
 }
 
-/* Link styling */
+/* Nav link styles */
 .nav-links a {
   text-decoration: none;
-  color: #1a4c48;            /* brand colour */
+  color: #1a4c48;
   font-weight: 600;
-  transition: color 0.3s, transform 0.2s; /* smooth hover effect */
+  transition: color 0.3s, transform 0.2s;
 }
 
-/* Hover effect for links */
+/* Nav link hover effect */
 .nav-links a:hover {
-  color: #2d6a62;            /* lighter green on hover */
-  transform: scale(1.05);    /* slight zoom */
+  color: #2d6a62;
+  transform: scale(1.05);
 }
 
-/* ---------- HERO / CONTENT ---------- */
-/* Main content area: centered and spaced */
+/* Main content area */
 main.content {
   max-width: 1100px;
   margin: 60px auto;
@@ -66,7 +62,7 @@ main.content {
   text-align: center;
 }
 
-/* Big heading */
+/* Main heading */
 main h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -82,7 +78,7 @@ main h2 {
   margin-bottom: 20px;
 }
 
-/* Paragraph styling */
+/* Paragraphs */
 main p {
   max-width: 750px;
   margin: 0 auto 20px auto;
@@ -92,11 +88,10 @@ main p {
   line-height: 1.8;
 }
 
-/* ---------- BUTTON ---------- */
-/* Reusable button style */
+/* Button style */
 .btn {
   display: inline-block;
-  background-color: #1a4c48; /* brand green */
+  background-color: #1a4c48;
   color: #fff;
   padding: 12px 28px;
   text-decoration: none;
@@ -108,12 +103,11 @@ main p {
 
 /* Button hover effect */
 .btn:hover {
-  background-color: #163b39; /* darker green */
-  transform: translateY(-2px); /* slight lift */
+  background-color: #163b39;
+  transform: translateY(-2px);
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-/* Mobile-friendly tweaks for smaller screens */
+/* Mobile styles */
 @media (max-width: 768px) {
   .nav-links {
     flex-direction: column;
@@ -137,12 +131,11 @@ main p {
   }
 }
 
-/* ---------- OPTIONAL ENHANCEMENT ---------- */
-/* Adds a soft zoom effect when hovering over any image */
+/* Image hover zoom */
 img {
   transition: transform 0.3s ease;
 }
 
 img:hover {
-  transform: scale(1.02); /* gentle zoom on hover */
+  transform: scale(1.02);
 }
