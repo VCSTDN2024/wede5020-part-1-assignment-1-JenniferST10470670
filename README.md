@@ -4,7 +4,7 @@
 - Student Number: ST10479670
 - Group: GROUP 1
 - Subject: Web devlopment part 2
-- Git link:
+- Git link:https://github.com/VCSTDN2024/wede5020-part-1-assignment-1-JenniferST10470670.git
 
 
 ## Part 1 Corrections  
@@ -399,3 +399,4 @@ It provides **clear deliverables** at each stage, resulting in a **well-structur
 - Smaha, C., 2023. *Domain Hosting vs Web Hosting - What’s the Difference?* [online] InMotion Hosting Blog. Available at: <https://www.inmotionhosting.com/blog/domain-hosting-vs-web-hosting/> [Accessed 26 August 2025].  
 
 - FundsforNGOs, 2024. *What is the importance of Project Budget? - Grants and Resources for Sustainability*. [online] FundsforNGOs. Available at: <https://www.fundsforngos.org/proposals/what-is-the-importance-of-project-budget/> [Accessed 26 August 2025].  
+
