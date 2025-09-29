@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Essentials – Bora Foundation</title>
   
+  <!-- External stylesheet  -->
   <link rel="stylesheet" href="style.css">
 
   <style>
-/* ===== Base page setup (simple + brand color) ===== */
+/* Base page setup (simple + brand color)*/
 :root { --brand:#1a4c48; }
 body{
   margin:0; padding:0; font-family:Arial, sans-serif;
@@ -22,6 +23,8 @@ nav{
   display:flex; justify-content:space-between; align-items:center;
   gap:16px; padding:12px 20px; background:var(--brand);
 }
+
+
 nav .brand img{ width:48px; height:48px; }
 nav ul{ list-style:none; margin:0; padding:0; display:flex; gap:16px; }
 nav a{ color:#fff; text-decoration:none; font-weight:700; }
@@ -29,10 +32,14 @@ nav a:hover{ text-decoration:underline; }
 
 /* Main layout */
 main{ flex:1; max-width:1000px; margin:0 auto; padding:32px 20px; }
-main h1, main h2{ text-align:center; color:var(--brand); font-weight:800; margin-bottom:20px; }
-main p{ line-height:1.75; margin:0 0 16px; }
+main h1, main h2{
+   text-align:center; color:var(--brand); font-weight:800; margin-bottom:20px; }
 
-/* ===== Essentials table (desktop) ===== */
+   main p{ 
+  line-height:1.75; margin:0 0 16px; }
+
+
+/*  Essentials table (desktop) */
 .table-wrap{
   background:#f6faf9; border:2px solid #d7e7e4; border-radius:12px;
   padding:10px; box-shadow:0 6px 18px rgba(0,0,0,.08);
@@ -50,6 +57,8 @@ main p{ line-height:1.75; margin:0 0 16px; }
 .ess-table thead th{
   background:var(--brand); color:#fff; font-weight:700; text-align:left; padding:12px 14px;
 }
+
+
 .ess-table th + th, .ess-table td + td{ border-left:1px solid #e8f1ef; }
 .ess-table td{
   background:#fff; padding:12px 14px; border-top:1px solid #e6efed; line-height:1.6;
@@ -58,7 +67,9 @@ main p{ line-height:1.75; margin:0 0 16px; }
 .ess-table tbody tr:nth-child(odd) td{ background:#f9fcfb; }
 .ess-table tbody tr:hover td{ background:#eef7f5; }
 
-/* ===== Mobile stacked “cards” (single clean version) ===== */
+
+
+/*Mobile stacked “cards” (single clean version)  */
 @media (max-width:900px){
   .ess-table{ min-width:0; }
   .ess-table thead{ display:none; }
@@ -67,6 +78,8 @@ main p{ line-height:1.75; margin:0 0 16px; }
     border:1px solid #e6efed; border-radius:12px; overflow:hidden;
     background:#fff; margin:0 0 14px; box-shadow:0 4px 12px rgba(0,0,0,.04);
   }
+  
+  
   .ess-table td{ border:none; border-top:1px solid #eef4f3; padding:10px 12px; }
   .ess-table td:first-child{ border-top:none; }
   /* Label sits ABOVE value = never overlaps */
@@ -76,7 +89,7 @@ main p{ line-height:1.75; margin:0 0 16px; }
   }
 }
 
-/* ===== Animated images under the table ===== */
+/*Animated images under the table */
 .ess-media{
   display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0 8px; align-items:stretch;
 }
@@ -98,6 +111,7 @@ main p{ line-height:1.75; margin:0 0 16px; }
   background:var(--brand); color:#fff; font-weight:800; text-decoration:none;
   transition:transform .2s, background .25s;
 }
+
 .cta:hover{ transform:translateY(-2px); background:#163f3b; }
 
 /* Footer */

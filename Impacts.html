@@ -4,151 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impacts – Bora Foundation</title>
- 
+
+  <!-- Global stylesheet (external) -->
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* === Base layout === */
+    :root { --brand:#1a4c48; --ink:#2c2c2c; }
+
+    /* base page layout */
     body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffffff;
-      color: #1a4c48;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      margin:0; font-family:Arial, sans-serif; color:var(--brand);
+      background:#fff; min-height:100vh; display:flex; flex-direction:column;
     }
+    img { max-width:100%; height:auto; display:block; }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* === Header and Navigation === */
-    header {
-      background: #1a4c48;
-    }
-
+    /* header + navigation */
+    header { background:var(--brand); }
     nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 20px;
-      gap: 16px;
-      background: #1a4c48;
+      display:flex; justify-content:space-between; align-items:center;
+      gap:16px; padding:12px 20px;
     }
 
-    nav .brand img {
-      height: 48px;
-      width: 48px;
-    }
+    nav .brand img { width:48px; height:48px; }
+    nav ul { list-style:none; margin:0; padding:0; display:flex; gap:16px; }
+    nav a { color:#fff; text-decoration:none; font-weight:700; }
+    nav a:hover { text-decoration:underline; }
 
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 16px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* === Main Content === */
+    /* main container */
     main {
-      flex: 1;
-      padding: 32px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      flex:1; max-width:1100px; margin:0 auto; padding:32px 20px;
     }
 
+    /* main heading */
     main h1 {
-      font-size: 2.5rem;
-      margin-bottom: 24px;
+      text-align:center; margin:0 0 22px; color:var(--brand); font-weight:800;
+      font-size:clamp(2rem, 5vw, 2.75rem);
+    }
+    main h1::after {
+      content:""; display:block; width:84px; height:4px; margin:10px auto 0;
+      background:var(--brand); border-radius:999px;
     }
 
-    section {
-      margin-bottom: 32px;
+    /* grid layout for cards */
+    .impact-grid {
+      display:grid; gap:18px;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+    @media (max-width:980px) { .impact-grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:640px) { .impact-grid { grid-template-columns:1fr; } }
+
+    /* card styling */
+    .impact-card {
+      background:#f6faf9; border:2px solid #d7e7e4; border-radius:14px;
+      padding:16px; box-shadow:0 8px 22px rgba(0,0,0,.06);
+      display:flex; flex-direction:column; align-items:center; text-align:center;
+      transition:transform .22s ease, box-shadow .22s ease;
+      animation:fadeUp .6s ease both;
     }
 
-    section p {
-      line-height: 1.6;
-      margin-top: 12px;
+    .impact-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 12px 26px rgba(0,0,0,.1);
+    }
+    .impact-card img {
+      width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:10px;
+      margin-bottom:12px;
     }
 
-    section img {
-      border-radius: 8px;
-      margin-bottom: 12px;
+    .impact-card .name {
+      margin:2px 0 6px; font-weight:800; color:var(--brand);
+      font-size:clamp(1.05rem, 2.4vw, 1.2rem);
+    }
+    
+    .impact-card .story {
+      color:var(--ink); line-height:1.7; margin:0;
+      font-size:clamp(.98rem, 2.1vw, 1.05rem);
+    }
+    .impact-card .story em { font-style:italic; }
+
+    /* card fade-up animation */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(10px); }
+      to   { opacity:1; transform:translateY(0); }
     }
 
-    /* === Footer === */
+    /* footer */
     footer {
-      background: #1a4c48;
-      text-align: center;
-      padding: 24px 12px;
-      color: white;
+      background:var(--brand); color:#fff; text-align:center; padding:24px 12px;
     }
+    .social { display:inline-flex; gap:12px; align-items:center; margin-bottom:12px; }
+    .social img { width:30px; height:32px; }
 
-    footer h3 {
-      margin-bottom: 12px;
-    }
-
-    .social {
-      display: inline-flex;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-
-    .social img {
-      width: 30px;
-      height: 32px;
-    }
-
-    /* === Responsive Nav === */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      nav .brand {
-        margin-bottom: 15px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-      }
-
-      nav ul li {
-        width: 100%;
-      }
-
+    /* responsive nav */
+    @media (max-width:768px) {
+      nav { flex-direction:column; text-align:center; }
+      nav .brand { margin-bottom:12px; }
+      nav ul { flex-direction:column; gap:10px; width:100%; }
       nav ul a {
-        display: block;
-        padding: 10px 12px;
-        border: 1px solid rgba(255,255,255,0.25);
-        border-radius: 10px;
-        text-align: center;
+        display:block; padding:10px 12px;
+        border:1px solid rgba(255,255,255,.25); border-radius:10px;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- === Navigation === -->
+  <!-- header/navigation -->
   <header>
     <nav>
       <a class="brand" href="index.html">
@@ -166,54 +127,64 @@
     </nav>
   </header>
 
-  <!-- === Main Content === -->
+  <!-- main section -->
   <main>
     <h1>Impact of Donation</h1>
 
-    <section>
-      <img src="images/childreading.png" width="240" alt="Young girl named Esther sits cross-legged reading a book with a teddy bear beside her in a cozy, warmly lit room." />
-      <p><strong>Esther</strong></p>
-      <p>
-        Donations bring the magic of reading to life.<br />
-        Esther shares, "Before the shelter, I had no books. Now, I read daily with my teddy, and I dream of becoming a doctor."
-      </p>
-    </section>
+    <!-- grid of impact stories -->
+    <div class="impact-grid">
+      <!-- Esther -->
+      <article class="impact-card">
+        <img src="images/childreading.png" alt="Esther reading with a teddy." />
+        <p class="name">Esther</p>
+        <p class="story"><em>“Before the shelter, I had no books. Now I read daily with my teddy and dream of becoming a doctor.”</em></p>
+      </article>
 
-    <section>
-      <img src="images/smile.png" width="240" alt="Noah and Oliver smiling" />
-      <p><strong>Noah and Oliver</strong></p>
-      <p>
-        Your support helps children discover friendship and confidence.<br />
-        Noah and Oliver say, "We used to feel invisible, but now we laugh, play, and look after each other as siblings."
-      </p>
-    </section>
+      <!-- Noah & Oliver -->
+      <article class="impact-card">
+        <img src="images/smile.png" alt="Noah and Oliver smiling." />
+        <p class="name">Noah and Oliver</p>
+        <p class="story"><em>“We used to feel invisible, but now we laugh, play, and look after each other as siblings.”</em></p>
+      </article>
 
-    <section>
-      <img src="images/ridingbike.png" width="240" alt="Fabio and Jady riding a bike" />
-      <p><strong>Fabio and Jady</strong></p>
-      <p>
-        "Donations like this bike have had a huge impact," one child shares.<br />
-        "We share everything, even our bike. Thanks to your generosity, we feel seen and supported."
-      </p>
-    </section>
+      <!-- Fabio & Jady -->
+      <article class="impact-card">
+        <img src="images/ridingbike.png" alt="Fabio and Jady riding a bike." />
+        <p class="name">Fabio and Jady</p>
+        <p class="story"><em>“Donations like this bike have had a huge impact. We share everything—even our bike. Thanks to your generosity, we feel seen and supported.”</em></p>
+      </article>
+
+      <!-- Jessi -->
+      <article class="impact-card">
+        <img src="images/orphanchild.png" alt="Jessi being held with care." />
+        <p class="name">Jessi</p>
+        <p class="story"><em>“Jessi’s story reminds us why every act of kindness matters. With your support, she has found safety, comfort, and the hope of a brighter future.”</em></p>
+      </article>
+
+      <!-- Amina, Daniel & Grace -->
+      <article class="impact-card">
+        <img src="images/3 kids.png" alt="Three friends smiling and hugging each other." />
+        <p class="name">Amina, Daniel & Grace</p>
+        <p class="story"><em>“Friendship and joy shine brighter when children feel safe and supported. These smiles are made possible through your kindness.”</em></p>
+      </article>  
+
+      <!-- Yusuf -->
+      <article class="impact-card"> 
+        <img src="images/praying.png" alt="Young boy praying in a church." />
+        <p class="name">Yusuf</p>
+        <p class="story"><em>“With hope in his heart, Yusuf prays for a better tomorrow. Your donations give him and others the chance to believe in brighter days.”</em></p>
+      </article>
+    </div>
   </main>
 
-  <!-- === Footer === -->
+  <!-- footer -->
   <footer>
     <h3>Our social media</h3>
     <div class="social">
-      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
-        <img src="images/insta.png" alt="Instagram" />
-      </a>
-      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
-        <img src="images/facebook.png" alt="Facebook" />
-      </a>
-      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
-        <img src="images/linkedin.webp" alt="LinkedIn" />
-      </a>
-      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
-        <img src="images/Whatsapp.png" alt="WhatsApp" />
-      </a>
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><img src="images/insta.png" alt="Instagram" /></a>
+      <a href="https://www.facebook.com/login.php" target="_blank"><img src="images/facebook.png" alt="Facebook" /></a>
+      <a href="https://www.linkedin.com/login" target="_blank"><img src="images/linkedin.webp" alt="LinkedIn" /></a>
+      <a href="https://web.whatsapp.com/" target="_blank"><img src="images/Whatsapp.png" alt="WhatsApp" /></a>
     </div>
     <p>&copy; 2025 Bora Foundation. All rights reserved.</p>
   </footer>
