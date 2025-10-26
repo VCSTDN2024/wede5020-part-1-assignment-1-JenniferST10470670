@@ -4,104 +4,214 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Impacts – Bora Foundation</title>
-   <!-- External stylesheet  -->
-  <link rel="stylesheet" href="style.css">
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 
   <style>
-    :root { --brand:#1a4c48; --ink:#2c2c2c; }
+    :root {
+      --brand: #1a4c48;
+      --ink: #2c2c2c;
+    }
 
     /* base page layout */
     body {
-      margin:0; font-family:Arial, sans-serif; color:var(--brand);
-      background:#fff; min-height:100vh; display:flex; flex-direction:column;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--brand);
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
-    img { max-width:100%; height:auto; display:block; }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
     /* header + navigation */
-    header { background:var(--brand); }
-    nav {
-      display:flex; justify-content:space-between; align-items:center;
-      gap:16px; padding:12px 20px;
+    header {
+      background: var(--brand);
     }
 
-    nav .brand img { width:48px; height:48px; }
-    nav ul { list-style:none; margin:0; padding:0; display:flex; gap:16px; }
-    nav a { color:#fff; text-decoration:none; font-weight:700; }
-    nav a:hover { text-decoration:underline; }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 20px;
+    }
+
+    nav .brand img {
+      width: 48px;
+      height: 48px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
 
     /* main container */
     main {
-      flex:1; max-width:1100px; margin:0 auto; padding:32px 20px;
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px;
     }
 
     /* main heading */
     main h1 {
-      text-align:center; margin:0 0 22px; color:var(--brand); font-weight:800;
-      font-size:clamp(2rem, 5vw, 2.75rem);
+      text-align: center;
+      margin: 0 0 22px;
+      color: var(--brand);
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 2.75rem);
     }
+
     main h1::after {
-      content:""; display:block; width:84px; height:4px; margin:10px auto 0;
-      background:var(--brand); border-radius:999px;
+      content: "";
+      display: block;
+      width: 84px;
+      height: 4px;
+      margin: 10px auto 0;
+      background: var(--brand);
+      border-radius: 999px;
     }
 
     /* grid layout for cards */
     .impact-grid {
-      display:grid; gap:18px;
-      grid-template-columns:repeat(3, minmax(0,1fr));
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    @media (max-width:980px) { .impact-grid { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:640px) { .impact-grid { grid-template-columns:1fr; } }
+
+    @media (max-width: 980px) {
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     /* card styling */
     .impact-card {
-      background:#f6faf9; border:2px solid #d7e7e4; border-radius:14px;
-      padding:16px; box-shadow:0 8px 22px rgba(0,0,0,.06);
-      display:flex; flex-direction:column; align-items:center; text-align:center;
-      transition:transform .22s ease, box-shadow .22s ease;
-      animation:fadeUp .6s ease both;
+      background: #f6faf9;
+      border: 2px solid #d7e7e4;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      animation: fadeUp 0.6s ease both;
     }
 
     .impact-card:hover {
-      transform:translateY(-6px);
-      box-shadow:0 12px 26px rgba(0,0,0,.1);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
     }
+
     .impact-card img {
-      width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:10px;
-      margin-bottom:12px;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
     }
 
     .impact-card .name {
-      margin:2px 0 6px; font-weight:800; color:var(--brand);
-      font-size:clamp(1.05rem, 2.4vw, 1.2rem);
+      margin: 2px 0 6px;
+      font-weight: 800;
+      color: var(--brand);
+      font-size: clamp(1.05rem, 2.4vw, 1.2rem);
     }
 
     .impact-card .story {
-      color:var(--ink); line-height:1.7; margin:0;
-      font-size:clamp(.98rem, 2.1vw, 1.05rem);
+      color: var(--ink);
+      line-height: 1.7;
+      margin: 0;
+      font-size: clamp(0.98rem, 2.1vw, 1.05rem);
     }
-    .impact-card .story em { font-style:italic; }
+
+    .impact-card .story em {
+      font-style: italic;
+    }
 
     /* card fade-up animation */
     @keyframes fadeUp {
-      from { opacity:0; transform:translateY(10px); }
-      to   { opacity:1; transform:translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* footer */
     footer {
-      background:var(--brand); color:#fff; text-align:center; padding:24px 12px;
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      padding: 24px 12px;
     }
-    .social { display:inline-flex; gap:12px; align-items:center; margin-bottom:12px; }
-    .social img { width:30px; height:32px; }
+
+    .social {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 32px;
+    }
 
     /* responsive nav */
-    @media (max-width:768px) {
-      nav { flex-direction:column; text-align:center; }
-      nav .brand { margin-bottom:12px; }
-      nav ul { flex-direction:column; gap:10px; width:100%; }
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav .brand {
+        margin-bottom: 12px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
       nav ul a {
-        display:block; padding:10px 12px;
-        border:1px solid rgba(255,255,255,.25); border-radius:10px;
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
       }
     }
   </style>
@@ -110,21 +220,20 @@
 <body>
   <!-- header/navigation -->
   <header>
-   <nav>
-  <a class="brand" href="index.html" target="_blank" rel="noopener">
-    <img src="images/BoraLogo.png" alt="Bora Foundation logo" />
-  </a>
-  <ul>
-    <li><a href="index.html" target="_blank" rel="noopener">Home</a></li>
-    <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
-    <li><a href="essentials.html" target="_blank" rel="noopener">Essentials</a></li>
-    <li><a href="ways-to-give.html" target="_blank" rel="noopener">Ways To Give</a></li>
-    <li><a href="donate.html" target="_blank" rel="noopener">Donate</a></li>
-    <li><a href="impacts.html" target="_blank" rel="noopener">Impacts</a></li>
-    <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-  </ul>
-</nav>
-
+    <nav>
+      <a class="brand" href="index.html" target="_blank" rel="noopener">
+        <img src="images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html" target="_blank" rel="noopener">Home</a></li>
+        <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
+        <li><a href="essentials.html" target="_blank" rel="noopener">Essentials</a></li>
+        <li><a href="ways-to-give.html" target="_blank" rel="noopener">Ways To Give</a></li>
+        <li><a href="donate.html" target="_blank" rel="noopener">Donate</a></li>
+        <li><a href="impacts.html" target="_blank" rel="noopener">Impacts</a></li>
+        <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- main section -->
@@ -163,13 +272,13 @@
 
       <!-- Amina, Daniel & Grace -->
       <article class="impact-card">
-        <img src="images/3 kids.png" alt="Three friends smiling and hugging each other." />
-        <p class="name">Amina, Daniel & Grace</p>
+        <img src="images/3kids.png" alt="Three friends smiling and hugging each other." />
+        <p class="name">Amina, Daniel &amp; Grace</p>
         <p class="story"><em>“Friendship and joy shine brighter when children feel safe and supported. These smiles are made possible through your kindness.”</em></p>
-      </article>  
+      </article>
 
       <!-- Yusuf -->
-      <article class="impact-card"> 
+      <article class="impact-card">
         <img src="images/praying.png" alt="Young boy praying in a church." />
         <p class="name">Yusuf</p>
         <p class="story"><em>“With hope in his heart, Yusuf prays for a better tomorrow. Your donations give him and others the chance to believe in brighter days.”</em></p>
@@ -181,10 +290,18 @@
   <footer>
     <h3>Our social media</h3>
     <div class="social">
-      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><img src="images/insta.png" alt="Instagram" /></a>
-      <a href="https://www.facebook.com/login.php" target="_blank"><img src="images/facebook.png" alt="Facebook" /></a>
-      <a href="https://www.linkedin.com/login" target="_blank"><img src="images/linkedin.webp" alt="LinkedIn" /></a>
-      <a href="https://web.whatsapp.com/" target="_blank"><img src="images/Whatsapp.png" alt="WhatsApp" /></a>
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
+        <img src="images/insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
+        <img src="images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+        <img src="images/linkedin.webp" alt="LinkedIn" />
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
+        <img src="images/Whatsapp.png" alt="WhatsApp" />
+      </a>
     </div>
     <p>&copy; 2025 Bora Foundation. All rights reserved.</p>
   </footer>

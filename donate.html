@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donate – Bora Foundation</title>
+  <title>Contact Us – Bora Foundation</title>
 
   <!-- External stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -106,41 +106,103 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* donate shell */
-    .donate-wrap {
+    /* form shell */
+    .contact-form {
       padding: 18px;
     }
 
-    .donate-wrap section {
-      margin: 0 0 16px;
-    }
-
-    .donate-wrap h3,
-    .donate-wrap h4 {
-      margin: 0 0 10px;
-      font-weight: 800;
-    }
-
-    .donate-wrap p {
-      margin: 0 0 10px;
-      line-height: 1.7;
-      color: var(--ink);
-    }
-
-    .donate-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 10px;
+    .contact-form form {
       display: grid;
-      gap: 10px;
+      gap: 14px;
+      grid-template-columns: 1fr; /* single column */
     }
 
-    .donate-list li {
-      background: #fff;
-      border: 1px solid #e0ebe8;
-      border-left: 6px solid var(--brand);
+    label {
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cfdad7;
       border-radius: 10px;
-      padding: 10px 12px;
+      font-size: 1rem;
+      transition: border-color .2s, box-shadow .2s;
+      background: #fff;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(26, 76, 72, .15);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    /* name + surname inline */
+    .name-row {
+      display: flex;
+      gap: 16px;
+    }
+
+    .field {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* submit */
+    .contact-form button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .18s, background .25s;
+      width: fit-content;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-2px);
+      background: #163f3b;
+    }
+
+    /* maps */
+    .map-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .map-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .map-item h4 {
+      margin: 0;
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    .map-grid iframe {
+      width: 100%;
+      height: clamp(260px, 35vw, 360px);
+      border: 0;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
     }
 
     /* right column */
@@ -151,10 +213,7 @@
     }
 
     @media (min-width: 1000px) {
-      .sidebar {
-        position: sticky;
-        top: 90px;
-      }
+      .sidebar { position: sticky; top: 90px; }
     }
 
     .sidebar .card {
@@ -205,9 +264,10 @@
 
     /* responsive */
     @media (max-width: 920px) {
-      main {
-        display: block;
-      }
+      main { display: block; }
+      .name-row { flex-direction: column; }
+      .map-grid { grid-template-columns: 1fr; }
+      .contact-form button { width: 100%; }
     }
 
     @media (max-width: 768px) {
@@ -257,57 +317,87 @@
 
   <!-- main -->
   <main>
-    <h1>Donation Methods</h1>
+    <h1>Contact Us</h1>
 
-    <!-- left: donate sections -->
-    <div class="card donate-wrap">
-      <section id="banking">
-        <h4>Banking Details</h4>
-        <ul class="donate-list">
-          <li><b>Bank Name:</b> RMB Private Bank</li>
-          <li><b>Account Number:</b> 62513164128</li>
-          <li><b>Branch Code:</b> 261251</li>
-          <li><b>SWIFT Code:</b> FIRNZAJJ</li>
-        </ul>
-        <p><b>Note:</b> You may donate via Payfast, PayPal, or EFT using the details above. All donations are deeply appreciated.</p>
-      </section>
+    <!-- left: form + maps -->
+    <div class="card contact-form">
+      <form action="#" method="post">
+        <div class="name-row">
+          <div class="field">
+            <label for="first-name">Name*</label>
+            <input type="text" id="first-name" name="first-name" placeholder="First Name" required />
+          </div>
+          <div class="field">
+            <label for="last-name">Surname*</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required />
+          </div>
+        </div>
 
-      <section id="shipping">
-        <h4>Drop-off / Shipping</h4>
-        <ul class="donate-list">
-          <li><b>Shipping Address:</b> Bora Foundation, P.O. Box 1942, Cape Town, 8000, South Africa</li>
-          <li><b>Email:</b> <a href="mailto:info@borafoundation.com">info@borafoundation.com</a></li>
-          <li><b>Telephone:</b> +27 (0)11 577 5600</li>
-          <li><b>WhatsApp:</b> +27 624 753 106</li>
-          <li><b>Recommended Couriers:</b> DHL and FedEx</li>
-        </ul>
-        <p><b>Note:</b> You can deliver donated goods using the recommended couriers or a service of your choice. Please contact us to coordinate delivery.</p>
-        <p><a href="impacts.html"><b>See how your donations help →</b></a></p>
-      </section>
+        <label for="email">Email Address*</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="query-topic">Select a topic related to your enquiry*</label>
+        <select id="query-topic" name="query-topic" required>
+          <option value="">-- Please select --</option>
+          <option value="Essentials">Essentials</option>
+          <option value="Impacts">Impacts</option>
+          <option value="Ways">Ways</option>
+          <option value="General">General Enquiry</option>
+        </select>
+
+        <label for="message">Message*</label>
+        <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <!-- maps with titles -->
+      <div class="map-grid">
+        <div class="map-item">
+          <h4>Johannesburg – Sandton</h4>
+          <iframe
+            title="Sandton, Johannesburg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114694.68665913996!2d28.0576379!3d-26.059426549999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957398cbf40517%3A0xdf8bd21bf1eb74c!2sSandton!5e0!3m2!1sen!2sza!4v1759149569125!5m2!1sen!2sza"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <div class="map-item">
+          <h4>Cape Town – Camps Bay</h4>
+          <iframe
+            title="Camps Bay, Cape Town"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17602.51995251648!2d18.36891068101721!3d-33.95330798422032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc67ad0e328c89%3A0xc7a0b241c4464b97!2sCamps%20Bay%2C%20Cape%20Town%2C%208005!5e0!3m2!1sen!2sza!4v1759149462778!5m2!1sen!2sza"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
     </div>
 
     <!-- right: info cards -->
     <div class="sidebar">
       <section class="card" aria-label="General contact details">
         <h2>General Contact Details</h2>
-        <p><b>Email:</b> <a href="mailto:Bora.foundation@gmail.com">Bora.foundation@gmail.com</a></p>
-        <p><b>Telephone:</b> <a href="tel:+27115475600">+27 (0)11 547 5600</a></p>
-        <p><b>WhatsApp:</b> <a href="https://wa.me/27608334690" target="_blank" rel="noopener">+27 (0)608 334 690</a></p>
+        <p><strong>Email:</strong> <a href="mailto:Bora.foundation@gmail.com">Bora.foundation@gmail.com</a></p>
+        <p><strong>Telephone:</strong> <a href="tel:+27115475600">+27 (0)11 547 5600</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/27608334690" target="_blank" rel="noopener">+27 (0)608 334 690</a></p>
       </section>
 
       <section class="card" aria-label="Donation address">
         <h3>Donation Drop-off / Shipping Address</h3>
         <p>
-          <b>Shipping Address</b><br />
+          <strong>Shipping Address</strong><br />
           Bora Foundation<br />
           PO Box 1942<br />
           Cape Town, 800<br />
           South Africa
         </p>
-        <p><b>Telephone:</b> <a href="tel:+27115775600">+27 (0)11 577 5600</a></p>
-        <p><b>WhatsApp:</b> <a href="https://wa.me/+27624753016" target="_blank" rel="noopener">+27 624 753 016</a></p>
+        <p><strong>Telephone:</strong> <a href="tel:+27115775600">+27 (0)11 577 5600</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/+27624753016" target="_blank" rel="noopener">+27 624 753 016</a></p>
       </section>
 
+      <!-- Recommended couriers -->
       <section class="card" aria-label="Recommended Courier Services">
         <h3>Recommended Courier Services</h3>
         <p>DHL</p>
