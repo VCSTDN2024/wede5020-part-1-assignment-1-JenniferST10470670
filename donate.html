@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us – Bora Foundation</title>
 
+  <!-- SEO meta tags -->
+  <meta name="description" content="Contact the Bora Foundation for donations, partnerships, volunteering or general enquiries. Find our email, phone, WhatsApp and drop-off locations." />
+  <meta name="keywords" content="Bora Foundation contact, donate, volunteer, partnership, email, phone, WhatsApp, South Africa charity" />
+  <meta name="author" content="Jennifer Baleke" />
+
+  <!-- Open Graph (social sharing) -->
+  <meta property="og:title" content="Contact Us – Bora Foundation" />
+  <meta property="og:description" content="Get in touch with the Bora Foundation about donations, volunteering, partnerships or general enquiries. Find our email, phone, WhatsApp and locations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/contact.html" />
+  <meta property="og:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
   <!-- External stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
@@ -17,9 +29,7 @@
     }
 
     /* base */
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -31,16 +41,10 @@
       flex-direction: column;
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    img { max-width: 100%; height: auto; display: block; }
 
     /* header/nav */
-    header {
-      background: var(--brand);
-    }
+    header { background: var(--brand); }
 
     nav {
       display: flex;
@@ -51,10 +55,7 @@
       background: var(--brand);
     }
 
-    nav .brand img {
-      width: 48px;
-      height: 48px;
-    }
+    nav .brand img { width: 48px; height: 48px; }
 
     nav ul {
       list-style: none;
@@ -70,9 +71,7 @@
       font-weight: 700;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
 
     /* main grid */
     main {
@@ -107,9 +106,7 @@
     }
 
     /* form shell */
-    .contact-form {
-      padding: 18px;
-    }
+    .contact-form { padding: 18px; }
 
     .contact-form form {
       display: grid;
@@ -117,10 +114,7 @@
       grid-template-columns: 1fr; /* single column */
     }
 
-    label {
-      font-weight: 800;
-      color: var(--brand);
-    }
+    label { font-weight: 800; color: var(--brand); }
 
     input,
     select,
@@ -142,16 +136,10 @@
       box-shadow: 0 0 0 3px rgba(26, 76, 72, .15);
     }
 
-    textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
+    textarea { min-height: 140px; resize: vertical; }
 
     /* name + surname inline */
-    .name-row {
-      display: flex;
-      gap: 16px;
-    }
+    .name-row { display: flex; gap: 16px; }
 
     .field {
       flex: 1;
@@ -185,11 +173,7 @@
       grid-template-columns: 1fr 1fr;
     }
 
-    .map-item {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .map-item { display: flex; flex-direction: column; gap: 8px; }
 
     .map-item h4 {
       margin: 0;
@@ -206,31 +190,18 @@
     }
 
     /* right column */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    .sidebar { display: flex; flex-direction: column; gap: 16px; }
 
     @media (min-width: 1000px) {
       .sidebar { position: sticky; top: 90px; }
     }
 
-    .sidebar .card {
-      padding: 18px;
-    }
+    .sidebar .card { padding: 18px; }
 
     .sidebar h2,
-    .sidebar h3 {
-      margin: 0 0 8px;
-      font-weight: 800;
-    }
+    .sidebar h3 { margin: 0 0 8px; font-weight: 800; }
 
-    .sidebar p {
-      margin: 0 0 10px;
-      line-height: 1.7;
-      color: var(--ink);
-    }
+    .sidebar p { margin: 0 0 10px; line-height: 1.7; color: var(--ink); }
 
     .sidebar a {
       color: var(--brand);
@@ -238,8 +209,38 @@
       text-decoration: underline;
     }
 
-    .sidebar a:hover {
+    .sidebar a:hover { text-decoration: none; }
+
+    /* signature block */
+    .signature {
+      font-family: 'Georgia', serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      width: fit-content;
+      margin: 26px auto 0;
+      text-align: center;
+    }
+
+    .signature h2 {
+      font-size: 28px;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .signature p { font-style: italic; color: #555; }
+
+    .signature a {
+      display: inline-block;
+      margin-top: 10px;
+      color: navy;
       text-decoration: none;
+    }
+
+    .signature a:hover {
+      color: crimson;
+      text-decoration: underline;
     }
 
     /* footer */
@@ -251,16 +252,9 @@
       margin-top: auto;
     }
 
-    .social {
-      display: inline-flex;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
+    .social { display: inline-flex; gap: 12px; margin-bottom: 12px; }
 
-    .social img {
-      width: 30px;
-      height: 32px;
-    }
+    .social img { width: 30px; height: 32px; }
 
     /* responsive */
     @media (max-width: 920px) {
@@ -271,21 +265,9 @@
     }
 
     @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav .brand {
-        margin-bottom: 15px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-      }
-
+      nav { flex-direction: column; text-align: center; }
+      nav .brand { margin-bottom: 15px; }
+      nav ul { flex-direction: column; gap: 10px; width: 100%; }
       nav ul a {
         display: block;
         padding: 10px 12px;
@@ -397,13 +379,19 @@
         <p><strong>WhatsApp:</strong> <a href="https://wa.me/+27624753016" target="_blank" rel="noopener">+27 624 753 016</a></p>
       </section>
 
-      <!-- Recommended couriers -->
       <section class="card" aria-label="Recommended Courier Services">
         <h3>Recommended Courier Services</h3>
         <p>DHL</p>
         <p>FedEx</p>
         <p>The Courier Guy</p>
       </section>
+    </div>
+
+    <!-- signature -->
+    <div class="signature">
+      <h2>Bora Foundation</h2>
+      <p>“Shining a Light, Building Brighter Futures.”</p>
+      <a href="about.html">Learn more</a>
     </div>
   </main>
 

@@ -5,9 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bora Foundation</title>
 
-  <!-- External stylesheet  -->
-  <link rel="stylesheet" href="style.css">
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Bora Foundation is a non-profit organisation empowering communities through education, care, and support. Join us in building brighter futures for children." />
+  <meta name="keywords" content="Bora Foundation, charity, orphanage, donation, education, community support, South Africa" />
+  <meta name="author" content="Jennifer Baleke" />
 
+  <!-- Open Graph (Social Sharing) -->
+  <meta property="og:title" content="Bora Foundation – Empowering Children Through Care and Education" />
+  <meta property="og:description" content="Bora Foundation is a South African non-profit dedicated to uplifting vulnerable children through education, shelter, and emotional support. Together, we build brighter futures." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/index.html" />
+  <meta property="og:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 
   <style>
     /* Base layout */
@@ -29,7 +40,7 @@
       display: block;
     }
 
-    /*  Header and Navigation */
+    /* Header and Navigation */
     header {
       background: #1a4c48;
     }
@@ -64,7 +75,8 @@
     nav a:hover {
       text-decoration: underline;
     }
-     /*  Call-to-action button */
+
+    /* Call-to-action button */
     .cta {
       margin-top: 24px;           
       text-align: center;         
@@ -88,10 +100,9 @@
       transform: translateY(-2px); 
     }
 
-
-    /* Hero Section  */
+    /* Hero Section */
     .hero {
-      background: #1a4c48; /* Bora foundation main Color */
+      background: #1a4c48;
       color: #ffffff;
       padding: 40px 24px;
       border-radius: 8px;
@@ -99,7 +110,6 @@
       margin: 32px auto;
       text-align: center;
     }
-/* Make sure all text in the hero section stays white */
 
     .hero h1,
     .hero p,
@@ -132,7 +142,6 @@
       margin: 0 auto;
     }
 
-    /* === Animations === */
     @keyframes heroSlideIn {
       0% { opacity: 0; transform: translateY(-15px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -143,115 +152,58 @@
       100% { opacity: 1; }
     }
 
-    .hero .animate-quote {
-      text-shadow: 0 0 0 rgba(255,255,255,0);
-      animation: heroFadeIn 1.2s ease-out 250ms forwards;
+    .hero img {
+      opacity: 0;
+      transform: translateY(14px) scale(1);             
+      animation:
+        imgIntro 800ms ease-out forwards,                
+        kenBurns 18s ease-in-out 900ms infinite alternate; 
+      border-radius: 6px;                                
     }
 
-    @keyframes quoteGlow {
-      from { text-shadow: 0 0 0 rgba(242, 220, 220, 0); }
-      to   { text-shadow: 0 0 10px rgba(255,255,255,0.35); }
+    .hero img:first-of-type { 
+      animation-delay: 200ms, 900ms; 
     }
 
-  /* Image entrance + gentle Ken Burns */
-.hero img {
-  opacity: 0;
-  transform: translateY(14px) scale(1);             
-  animation:
-    imgIntro 800ms ease-out forwards,                
-    kenBurns 18s ease-in-out 900ms infinite alternate; 
-  border-radius: 6px;                                
-}
-
-/*  two images so they don't move at the same time */
-.hero img:first-of-type { 
-  animation-delay: 200ms, 900ms; }
-
-  .hero img:last-of-type  { 
-  animation-delay: 450ms, 1150ms; }
-
-/* Hover: tiny lift for interactivity (desktop) */
-.hero img:hover {
-  transform: translateY(-2px) scale(1.02);
-  transition: transform .25s ease;
-}
-
-/* Keyframes */
-@keyframes imgIntro {
-  0%   { opacity: 0; transform: translateY(14px) scale(1); }
-  100% { opacity: 1; transform: translateY(0)    scale(1); }
-}
-
-@keyframes kenBurns {
-  0%   { transform: translateY(0)   scale(1);    }
-  100% { transform: translateY(-2%) scale(1.05); }
-
-}
-/*Special animation for the second image (hands)  */
-
-.hero img:last-of-type {
-  margin-top: 30px;
-
-  /* start its animations a little later than the first image */
-  animation-delay: 600ms, 1300ms;
-  animation-name: imgIntroHands, kenBurns;
-}
-
-/* Custom animation for hands image  */
-
-@keyframes imgIntroHands {
-  0%   { opacity: 0; transform: translateY(40px) scale(1); }
-  100% { opacity: 1; transform: translateY(0)    scale(1); }
-}
-
-
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .hero img {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-}
-  /*  Main Content  */
-    main {
-      flex: 1;
-      padding: 24px 20px;
+    .hero img:last-of-type  { 
+      animation-delay: 450ms, 1150ms; 
     }
 
-    h1 {
-      font-size: 3rem;
-      margin: 0 0 12px;
-      color: #f0f0f0;
+    .hero img:hover {
+      transform: translateY(-2px) scale(1.02);
+      transition: transform .25s ease;
     }
 
-    .tagline {
-      font-style: italic;
-      margin: 0 0 12px;
+    @keyframes imgIntro {
+      0%   { opacity: 0; transform: translateY(14px) scale(1); }
+      100% { opacity: 1; transform: translateY(0)    scale(1); }
     }
 
-    .lead {
-      max-width: 900px;
-      line-height: 1.6;
-      margin-bottom: 24px;
+    @keyframes kenBurns {
+      0%   { transform: translateY(0)   scale(1);    }
+      100% { transform: translateY(-2%) scale(1.05); }
     }
 
-    .cta a {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #1a4c48;
-      border-radius: 8px;
-      color: #fff;
-      font-weight: 700;
-      text-decoration: none;
+    .hero img:last-of-type {
+      margin-top: 30px;
+      animation-delay: 600ms, 1300ms;
+      animation-name: imgIntroHands, kenBurns;
     }
 
-    .cta a:hover {
-      background: #163f3b;
+    @keyframes imgIntroHands {
+      0%   { opacity: 0; transform: translateY(40px) scale(1); }
+      100% { opacity: 1; transform: translateY(0)    scale(1); }
     }
 
-    /* === Footer === */
+    @media (prefers-reduced-motion: reduce) {
+      .hero img {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Footer */
     footer {
       background: #1a4c48;
       text-align: center;
@@ -270,7 +222,6 @@
       height: 32px;
     }
 
-    /*  Responsive Nav (for smaller screens) */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -304,51 +255,44 @@
 </head>
 
 <body>
-  <!--  Header & Navigation -->
+  <!-- Header & Navigation -->
   <header>
     <nav>
-  <a class="brand" href="index.html" target="_blank" rel="noopener">
-    <img src="images/BoraLogo.png" alt="Bora Foundation logo" />
-  </a>
-  <ul>
-    <li><a href="index.html" target="_blank" rel="noopener">Home</a></li>
-    <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
-    <li><a href="essentials.html" target="_blank" rel="noopener">Essentials</a></li>
-    <li><a href="ways-to-give.html" target="_blank" rel="noopener">Ways To Give</a></li>
-    <li><a href="donate.html" target="_blank" rel="noopener">Donate</a></li>
-    <li><a href="impacts.html" target="_blank" rel="noopener">Impacts</a></li>
-    <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
-  </ul>
-</nav>
-
+      <a class="brand" href="index.html" target="_blank" rel="noopener">
+        <img src="images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html" target="_blank" rel="noopener">Home</a></li>
+        <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
+        <li><a href="essentials.html" target="_blank" rel="noopener">Essentials</a></li>
+        <li><a href="ways-to-give.html" target="_blank" rel="noopener">Ways To Give</a></li>
+        <li><a href="donate.html" target="_blank" rel="noopener">Donate</a></li>
+        <li><a href="impacts.html" target="_blank" rel="noopener">Impacts</a></li>
+        <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Main Hero Section  with the foundation history  -->
+  <!-- Hero Section -->
   <main>
     <section class="hero">
       <h1 class="animate-title">Bora Foundation</h1>
       <p class="tagline animate-quote">“Shining a Light, Building Brighter Futures”</p>
       <p class="lead">
-        Bora Foundation's mission is to provide safe shelter, education, and support to
-        shine a light in their lives by helping them build brighter futures. 
-        The Foundation embodies Bora Johnson's visionary commitment to uplifting the most vulnerable
-        members of society, leaving a lasting legacy of hope and empowerment.
-        </p>
+        Bora Foundation’s mission is to provide safe shelter, education, and emotional support — helping children build brighter futures. 
+        Founded by Bora Johnson, the organisation remains committed to uplifting the most vulnerable members of society and leaving a legacy of hope and empowerment.
+      </p>
 
-      <!-- Images that support the message -->
-<img src="images/child.png" alt="Child smiling" style="margin-top:16px;" />
-<img src="images/hands.png" alt="Helping hands" />
+      <img src="images/child.png" alt="Child smiling" style="margin-top:16px;" />
+      <img src="images/hands.png" alt="Helping hands" />
 
-<!-- LEARN MORE button  -->
-<div class="cta">
-  <a href="about.html">LEARN MORE</a>
-</div>
-
-      
+      <div class="cta">
+        <a href="about.html">LEARN MORE</a>
+      </div>
     </section>
   </main>
 
-  <!-- Footer that contains  our social media  -->
+  <!-- Footer -->
   <footer>
     <h3>Our social media</h3>
     <div class="social">
