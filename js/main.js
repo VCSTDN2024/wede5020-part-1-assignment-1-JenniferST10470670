@@ -177,4 +177,114 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 
+/* ===========================
+   Part 4 — Animations & DOM
+   =========================== */
+
+// 1) Scroll-reveal with IntersectionObserver
+(function () {
+  const items = document.querySelectorAll('[data-animate]');
+  if (!items.length) return;
+
+  // If observer unsupported, just show
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(el => el.classList.add('in-view'));
+    return;
+  }
+
+  const obs = new IntersectionObserver((entries, o) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        o.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -10% 0px' });
+
+  items.forEach(el => obs.observe(el));
+})();
+
+// 2) Live message counter on contact.html
+(function () {
+  const msg = document.getElementById('message');
+  if (!msg) return;
+
+  const LIMIT = 500; // adjust if you like
+  let counter = document.getElementById('msgCounter');
+  if (!counter) {
+    counter = document.createElement('small');
+    counter.id = 'msgCounter';
+    counter.className = 'msg-counter';
+    msg.insertAdjacentElement('afterend', counter);
+  }
+
+  const update = () => {
+    const len = msg.value.length;
+    counter.textContent = `${len}/${LIMIT} characters`;
+    counter.classList.toggle('is-limit', len > LIMIT * 0.9);
+    if (len > LIMIT) {
+      msg.setCustomValidity(`Please keep your message under ${LIMIT} characters.`);
+    } else {
+      msg.setCustomValidity('');
+    }
+  };
+
+  msg.addEventListener('input', update);
+  update();
+})();
+
+// 3) Essentials quick filter (essentials.html)
+(function () {
+  // Only run on essentials page
+  const onEssentials =
+    location.pathname.toLowerCase().includes('essentials.html') ||
+    document.title.toLowerCase().includes('essentials');
+
+  if (!onEssentials) return;
+
+  // Find first accordion panel list(s)
+  const lists = document.querySelectorAll('.accordion-panel .accordion-list, .accordion-panel ul, .accordion-panel ol');
+  if (!lists.length) return;
+
+  // Inject a filter input above the accordion
+  const wrap = document.createElement('div');
+  wrap.className = 'ess-filter-wrap';
+  wrap.innerHTML = `
+    <input type="search" id="essFilter" placeholder="Quick filter essentials (e.g., shoes, toiletries, milk)"/>
+  `;
+  const acc = document.querySelector('.accordion');
+  if (acc) acc.insertAdjacentElement('beforebegin', wrap);
+
+  const input = document.getElementById('essFilter');
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    lists.forEach(list => {
+      list.querySelectorAll('li, tr, td').forEach(node => {
+        const text = node.textContent.trim().toLowerCase();
+        node.style.display = q && !text.includes(q) ? 'none' : '';
+      });
+    });
+  });
+})();
+
+// 4) Back-to-top button
+(function () {
+  const btn = document.createElement('button');
+  btn.className = 'back-to-top';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.textContent = 'Top';
+  document.body.appendChild(btn);
+
+  const toggle = () => {
+    if (window.scrollY > 600) btn.classList.add('show');
+    else btn.classList.remove('show');
+  };
+  window.addEventListener('scroll', toggle, { passive: true });
+  toggle();
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
 
