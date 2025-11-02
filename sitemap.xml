@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+  <!-- Sitemap for Bora Foundation website –for WEDE5020 Part 3 -->
+    <loc>https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/essentials.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/ways-to-give.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/donate.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/impacts.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

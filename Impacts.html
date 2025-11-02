@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impacts – Bora Foundation</title>
+
+  
+    <!-- External stylesheet -->
+  <link rel="stylesheet" href="site.css">
+
+
+
+  <!-- SEO Meta Tags -->
+<meta name="description" content="Read inspiring impact stories showing how Bora Foundation donations change lives and bring hope to children across South Africa." />
+<meta name="keywords" content="Bora Foundation, impact, success stories, donations, children, education, South Africa" />
+<meta name="author" content="Jennifer Baleke" />
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:title" content="Our Impact – Bora Foundation" />
+<meta property="og:description" content="Discover the real stories of transformation made possible by your donations to Bora Foundation." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/impacts.html" />
+<meta property="og:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
+  <!-- Step 7: SEO & meta polish -->
+  <link rel="icon" href="images/BoraLogo.png" type="image/png" />
+  <meta name="theme-color" content="#1a4c48" />
+
+  <link rel="canonical" href="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/impacts.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Our Impact – Bora Foundation" />
+  <meta name="twitter:description" content="Explore Bora Foundation’s impact – real stories of hope and change made possible by your donations." />
+  <meta name="twitter:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
+  
+  
+  <style>
+    :root {
+      --brand: #1a4c48;
+      --ink: #2c2c2c;
+    }
+
+    /* base page layout */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--brand);
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* header + navigation */
+    header {
+      background: var(--brand);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 20px;
+    }
+
+    nav .brand img {
+      width: 48px;
+      height: 48px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* main container */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* main heading */
+    main h1 {
+      text-align: center;
+      margin: 0 0 22px;
+      color: var(--brand);
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+    }
+
+    main h1::after {
+      content: "";
+      display: block;
+      width: 84px;
+      height: 4px;
+      margin: 10px auto 0;
+      background: var(--brand);
+      border-radius: 999px;
+    }
+
+    /* grid layout for cards */
+    .impact-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: 980px) {
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .impact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* card styling */
+    .impact-card {
+      background: #f6faf9;
+      border: 2px solid #d7e7e4;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .impact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+    }
+
+    .impact-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+
+    .impact-card .name {
+      margin: 2px 0 6px;
+      font-weight: 800;
+      color: var(--brand);
+      font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+    }
+
+    .impact-card .story {
+      color: var(--ink);
+      line-height: 1.7;
+      margin: 0;
+      font-size: clamp(0.98rem, 2.1vw, 1.05rem);
+    }
+
+    .impact-card .story em {
+      font-style: italic;
+    }
+
+    /* card fade-up animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* footer */
+    footer {
+      background: var(--brand);
+      color: #fff;
+      text-align: center;
+      padding: 24px 12px;
+    }
+
+    .social {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 32px;
+    }
+
+    /* responsive nav */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav .brand {
+        margin-bottom: 12px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul a {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header/navigation -->
+  <header>
+    <nav>
+      <a class="brand" href="index.html" target="_blank" rel="noopener">
+        <img src="images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html" target="_blank" rel="noopener">Home</a></li>
+        <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
+        <li><a href="essentials.html" target="_blank" rel="noopener">Essentials</a></li>
+        <li><a href="ways-to-give.html" target="_blank" rel="noopener">Ways To Give</a></li>
+        <li><a href="donate.html" target="_blank" rel="noopener">Donate</a></li>
+        <li><a href="impacts.html" target="_blank" rel="noopener">Impacts</a></li>
+        <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- === MAIN SECTION  === -->
+<main>
+
+  <!-- Gallery Section (impact photos slider) -->
+  <section id="gallery" class="impact-gallery" aria-roledescription="carousel" aria-label="Bora photo slider">
+
+    <!-- Title and Intro -->
+    <h1 class="gallery-title">Gallery</h1>
+    <p class="gallery-intro">our gallery showcases the impact of your donations.</p>
+
+    <!-- Navigation arrows -->
+    <button class="slide-nav prev" aria-label="Previous slide" data-slide="prev">‹</button>
+
+    <!-- Main displayed image -->
+    <figure class="slide-stage">
+      <img class="slide-img" src="images/playing.png" alt="Children playing after a successful donation drive.">
+      <figcaption class="slide-caption">Children playing</figcaption>
+    </figure>
+
+    <button class="slide-nav next" aria-label="Next slide" data-slide="next">›</button>
+
+    <!-- Slide dots (added by JS) -->
+    <div class="slide-dots" role="tablist" aria-label="Choose slide"></div>
+
+    <!-- Thumbnails grid for all gallery images -->
+    <ul class="thumb-grid" aria-label="Gallery thumbnails">
+      <li>
+        <a href="#" class="thumb" data-index="0" data-title="Children sharing a warm meal" data-src="images/sharing.png">
+          <img src="images/sharing.png" alt="Community feeding initiative" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a href="#" class="thumb" data-index="1" data-title="our kids wearing the shoes Donated" data-src="images/shoes.png">
+          <img src="images/shoes.png" alt="School donations" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a href="#" class="thumb" data-index="2" data-title="Volunteers sorting and packing" data-src="images/volunteers.png">
+          <img src="images/volunteers.png" alt="Volunteers sorting and packing" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a href="#" class="thumb" data-index="3" data-title="School donation" data-src="images/schoolbags.png">
+          <img src="images/schoolbags.png" alt="school bags donation" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a href="#" class="thumb" data-index="4" data-title="Birthday celebration" data-src="images/celebration.png">
+          <img src="images/celebration.png" alt="celebration" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a href="#" class="thumb" data-index="5" data-title="Thank-you cards from kids" data-src="images/cards.png">
+          <img src="images/cards.png" alt="Thank-you cards from children" loading="lazy">
+        </a>
+      </li>
+    </ul>
+
+    <!-- Divider for real stories -->
+    <section class="real-stories-section">
+      <h2 class="stories-heading">Real Stories from the Children</h2>
+    </section>
+
+  </section>
+
+  <!-- Grid of real impact stories -->
+  <div class="impact-grid">
+
+    <!-- Esther -->
+    <article class="impact-card">
+      <img src="images/childreading.png" alt="Esther reading with a teddy.">
+      <p class="name">Esther</p>
+      <p class="story"><em>“Before the shelter, I had no books. Now I read daily with my teddy and dream of becoming a doctor.”</em></p>
+    </article>
+
+    <!-- Noah & Oliver -->
+    <article class="impact-card">
+      <img src="images/smile.png" alt="Noah and Oliver smiling.">
+      <p class="name">Noah and Oliver</p>
+      <p class="story"><em>“We used to feel invisible, but now we laugh, play, and look after each other as siblings.”</em></p>
+    </article>
+
+    <!-- Fabio & Jady -->
+    <article class="impact-card">
+      <img src="images/ridingbike.png" alt="Fabio and Jady riding a bike.">
+      <p class="name">Fabio and Jady</p>
+      <p class="story"><em>“Donations like this bike have had a huge impact. We share everything—even our bike. Thanks to your generosity, we feel seen and supported.”</em></p>
+    </article>
+
+    <!-- Jessi -->
+    <article class="impact-card">
+      <img src="images/orphanchild.png" alt="Jessi being held with care.">
+      <p class="name">Jessi</p>
+      <p class="story"><em>“Jessi’s story reminds us why every act of kindness matters. With your support, she has found safety, comfort, and the hope of a brighter future.”</em></p>
+    </article>
+
+    <!-- Amina, Daniel & Grace -->
+    <article class="impact-card">
+      <img src="images/3kids.png" alt="Three friends smiling and hugging each other.">
+      <p class="name">Amina, Daniel &amp; Grace</p>
+      <p class="story"><em>“Friendship and joy shine brighter when children feel safe and supported. These smiles are made possible through your kindness.”</em></p>
+    </article>
+
+    <!-- Yusuf -->
+    <article class="impact-card">
+      <img src="images/praying.png" alt="Young boy praying in a church.">
+      <p class="name">Yusuf</p>
+      <p class="story"><em>“With hope in his heart, Yusuf prays for a better tomorrow. Your donations give him and others the chance to believe in brighter days.”</em></p>
+    </article>
+
+  </div>
+</main>
+
+
+
+  <!-- footer -->
+  <footer>
+    <h3>Our social media</h3>
+    <div class="social">
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
+        <img src="images/insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
+        <img src="images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+        <img src="images/linkedin.webp" alt="LinkedIn" />
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
+        <img src="images/Whatsapp.png" alt="WhatsApp" />
+      </a>
+    </div>
+    <p>&copy; 2025 Bora Foundation. All rights reserved.</p>
+  </footer>
+   <!-- Link JavaScript here -->
+  <script src="js/main.js"></script>
+</body>
+</html>

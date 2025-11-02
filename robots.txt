@@ -1,0 +1,5 @@
+# robots.txt for Bora Foundation (student project)
+User-agent: *
+Allow: /
+
+Sitemap: https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/sitemap.xml

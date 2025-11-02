@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us – Bora Foundation</title>
+
+  
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="site.css">
+
+
+
+ 
+  <!-- SEO Meta Tags -->
+<meta name="description" content="Learn about the Bora Foundation’s story, mission, and vision to uplift orphaned children through care, education, and empowerment." />
+<meta name="keywords" content="Bora Foundation, about us, mission, vision, orphanage, education, charity" />
+<meta name="author" content="Jennifer Baleke" />
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:title" content="About Us – Bora Foundation" />
+<meta property="og:description" content="Discover how Bora Foundation was founded to create brighter futures for children through love, education, and community support." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/about.html" />
+<meta property="og:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+  
+<!-- Step 7: SEO & meta polish -->
+  <link rel="icon" href="images/BoraLogo.png" type="image/png" />
+  <meta name="theme-color" content="#1a4c48" />
+
+  <link rel="canonical" href="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/about.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Bora Foundation" />
+  <meta name="twitter:description" content="Learn about Bora Foundation’s mission and the people empowering communities through care and education." />
+  <meta name="twitter:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
+
+
+
+
+  <style>
+    /* base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #1a4c48;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* header/nav */
+    header {
+      background: #1a4c48;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      gap: 16px;
+      background: #1a4c48;
+    }
+
+    nav .brand img {
+      width: 48px;
+      height: 48px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 16px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* main */
+    main {
+      flex: 1;
+      padding: 32px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      color: #1a4c48;
+    }
+
+    main h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+      font-weight: 800;
+      letter-spacing: .4px;
+      animation: titleDrop 700ms ease-out forwards;
+      opacity: 0;
+    }
+
+    main h2,
+    main h3,
+    main h4 {
+      margin: 32px 0 12px;
+      color: #1a4c48;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    main p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    /* image block */
+    #imageblock {
+      margin: 22px 0 18px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, .08);
+      animation: fadeUp 650ms ease-out 220ms forwards;
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    #imageblock img {
+      width: 100%;
+      object-fit: cover;
+      filter: grayscale(18%);
+    }
+
+    /* info cards */
+    main > h1 + p,
+    main h2 + p,
+    main h3 + p,
+    main h4 + p {
+      background: #1a4c48;
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: 12px;
+      line-height: 1.85;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+      animation: fadeUp 650ms ease-out 120ms forwards;
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    /* button */
+    main p:last-of-type {
+      text-align: center;
+    }
+
+    main p a[href="essentials.html"] {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 12px 20px;
+      border: 2px solid #1a4c48;
+      color: #1a4c48;
+      background: #fff;
+      font-weight: 800;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background .25s, color .25s, transform .2s;
+    }
+
+    main p a[href="essentials.html"]:hover {
+      background: #1a4c48;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* animations */
+    @keyframes titleDrop {
+      0% { opacity: 0; transform: translateY(-14px) scale(.98); }
+      60% { opacity: 1; transform: translateY(0) scale(1.02); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* footer */
+    footer {
+      background: #1a4c48;
+      text-align: center;
+      padding: 24px 12px;
+      color: white;
+    }
+
+    .social {
+      display: inline-flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .social img {
+      width: 30px;
+      height: 32px;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav .brand {
+        margin-bottom: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      nav ul a {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, .25);
+        border-radius: 10px;
+      }
+
+      main {
+        padding: 24px 16px;
+      }
+    }
+/* --- Animation for About Us title --- */
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a4c48;
+  margin: 0 0 8px;
+  opacity: 0;                            /* start hidden */
+  transform: translateY(-10px);          /* slide down slightly */
+  animation: aboutTitleReveal 1.2s ease-out forwards;
+}
+
+/* Keyframes for smooth slide + fade in */
+@keyframes aboutTitleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <nav>
+      <a class="brand" href="index.html" target="_blank" rel="noopener">
+        <img src="images/BoraLogo.png" alt="Bora Foundation logo" />
+      </a>
+      <ul>
+        <li><a href="index.html" target="_blank" rel="noopener">Home</a></li>
+        <li><a href="about.html" target="_blank" rel="noopener">About Us</a></li>
+        <li><a href="essentials.html" target="_blank" rel="noopener">Essentials</a></li>
+        <li><a href="ways-to-give.html" target="_blank" rel="noopener">Ways To Give</a></li>
+        <li><a href="donate.html" target="_blank" rel="noopener">Donate</a></li>
+        <li><a href="impacts.html" target="_blank" rel="noopener">Impacts</a></li>
+        <li><a href="contact.html" target="_blank" rel="noopener">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <h1>About Us</h1>
+    <p>Bora Foundation was established in 2018 by Bora Johnson. It is a non-profit organisation dedicated to supporting orphaned children. The Foundation embodies Bora Johnson's visionary commitment to uplifting the most vulnerable members of society, leaving a legacy of hope and empowerment.</p>
+
+    <div id="imageblock">
+      <img src="images/about.png" alt="Bora Foundation logo" />
+    </div>
+
+    <h2>Vision</h2>
+    <p>Bora Foundation’s vision is to create a place where orphaned children are not just survivors, but thrivers — where they are given the love, care, and opportunities to unlock their potential and become beacons of hope in the community.</p>
+    
+    <div id="imageblock">
+      <img src="images/vision.png" alt="Bora Foundation logo" />
+    </div>
+
+    <h2>Mission</h2>
+    <p>The foundation will continue to prioritise the well-being of every child through education, psychological support, and healthcare, in order to encourage and build their futures.</p>
+    
+    <div id="imageblock">
+      <img src="images/mission.png" alt="Bora Foundation logo" />
+    </div>
+
+    <h2>The Impact of Your Donations</h2>
+    <p>Bora Foundation is dedicated to creating brighter futures for orphaned children by providing safe shelter, nutritious food, access to education, and psychological support. Guided by our mission to nurture and empower vulnerable young lives, we strive to make a meaningful difference in their lives.</p>
+    
+    
+
+    <p><a href="essentials.html">Explore Essentials</a></p>
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <h3>Our social media</h3>
+    <div class="social">
+      <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank" rel="noopener">
+        <img src="images/insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/login.php" target="_blank" rel="noopener">
+        <img src="images/facebook.png" alt="Facebook" />
+      </a>
+      <a href="https://www.linkedin.com/login" target="_blank" rel="noopener">
+        <img src="images/linkedin.webp" alt="LinkedIn" />
+      </a>
+      <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
+        <img src="images/whatsApp.png" alt="WhatsApp" />
+      </a>
+    </div>
+    <p>&copy; 2024 Bora Foundation. All rights reserved.</p>
+  </footer>
+  
+  <!-- Link JavaScript here -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
