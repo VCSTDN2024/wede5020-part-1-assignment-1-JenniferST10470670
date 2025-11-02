@@ -24,6 +24,20 @@
   <meta property="og:url" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/index.html" />
   <meta property="og:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
 
+    <!-- Step 7: SEO & meta polish -->
+  <link rel="icon" href="images/BoraLogo.png" type="image/png" />
+  <meta name="theme-color" content="#1a4c48" />
+
+  <!-- Canonical (points to this page) -->
+  <link rel="canonical" href="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/index.html" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bora Foundation" />
+  <meta name="twitter:description" content="Donate essentials or get in touch — every contribution from the heart helps." />
+  <meta name="twitter:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
+
   
 
   <style>
@@ -257,6 +271,52 @@
         text-align: center;
       }
     }
+    /* --- Final alignment  --- */
+.hero .tagline {
+  text-align: center;            
+  font-weight: 800;              
+  font-style: italic;            
+  font-size: clamp(1.6rem, 3vw, 2.2rem); 
+  color: #ffffff;            
+  max-width: 70ch;               
+  margin: 8px auto 18px;        
+  display: block;                
+}
+
+.hero {
+  padding-top: 72px;            
+}
+
+.hero h1,
+.hero .tagline,
+.hero .lead {
+  position: relative;
+  z-index: 2;                   
+}
+
+.hero .tagline {
+  margin: 6px auto 14px;        
+}
+
+.hero .lead {
+  margin: 0 auto 28px;          
+  max-width: 70ch;              
+}
+
+
+.hero img {
+  margin-top: 32px;             
+  position: relative;
+  z-index: 1;
+}
+
+
+@keyframes kenBurns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.05); }  
+}
+
+
   </style>
 </head>
 
@@ -284,7 +344,7 @@
   <main>
     <section class="hero">
       <h1 class="animate-title">Bora Foundation</h1>
-      <p class="tagline animate-quote">“Shining a Light, Building Brighter Futures”</p>
+      <p class="agline animate-quote quote-reveal">“Shining a Light, Building Brighter Futures”</p>
       <p class="lead">
         Bora Foundation’s mission is to provide safe shelter, education, and emotional support — helping children build brighter futures. 
         Founded by Bora Johnson, the organisation remains committed to uplifting the most vulnerable members of society and leaving a legacy of hope and empowerment.

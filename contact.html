@@ -20,6 +20,17 @@
   <meta property="og:url" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/contact.html" />
   <meta property="og:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
 
+    <!-- Step 7: SEO & meta polish -->
+  <link rel="icon" href="images/BoraLogo.png" type="image/png" />
+  <meta name="theme-color" content="#1a4c48" />
+
+  <link rel="canonical" href="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/contact.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact Bora Foundation" />
+  <meta name="twitter:description" content="Contact Bora Foundation for partnerships, volunteering, or donations – we love hearing from you!" />
+  <meta name="twitter:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
   <style>
     :root {
       --brand: #1a4c48;
@@ -277,127 +288,178 @@
   </header>
 
   <!-- main -->
-  <main>
-    <h1>Contact Us</h1>
+<main>
+  <h1>Contact Us</h1>
 
-    <div class="card contact-form">
-      <form action="#" method="post">
-        <div class="name-row">
-          <div class="field">
-            <label for="first-name">Name*</label>
-            <input type="text" id="first-name" name="first-name" placeholder="First Name" required />
+  <div class="card contact-form">
+    <!-- Part 6: add id + novalidate for custom JS validation -->
+    <form id="contactForm" action="#" method="post" novalidate>
+      <div class="name-row">
+        <div class="field">
+          <label for="first-name">Name*</label>
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="First Name"
+            autocomplete="given-name"
+            required
+            aria-describedby="firstNameError"
+          />
+          <!-- Part 6: inline error holder -->
+          <small id="firstNameError" class="error" role="alert" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="last-name">Surname*</label>
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="Last Name"
+            autocomplete="family-name"
+            required
+            aria-describedby="lastNameError"
+          />
+          <!-- Part 6: inline error holder -->
+          <small id="lastNameError" class="error" role="alert" aria-live="polite"></small>
+        </div>
+      </div>
+
+      <label for="email">Email Address*</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="you@example.com"
+        autocomplete="email"
+        required
+        aria-describedby="emailError"
+        pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
+      />
+      <!-- Part 6: inline error holder -->
+      <small id="emailError" class="error" role="alert" aria-live="polite"></small>
+
+      <label for="query-topic">Select a topic*</label>
+      <select
+        id="query-topic"
+        name="query-topic"
+        required
+        aria-describedby="topicError"
+      >
+        <option value="">-- Please select --</option>
+        <option value="Essentials">Essentials</option>
+        <option value="Impacts">Impacts</option>
+        <option value="Ways">Ways</option>
+        <option value="General">General Enquiry</option>
+      </select>
+      <!-- Part 6: inline error holder -->
+      <small id="topicError" class="error" role="alert" aria-live="polite"></small>
+
+      <label for="message">Message*</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="How can we help?"
+        required
+        maxlength="500"
+        aria-describedby="messageError msgCounter"
+      ></textarea>
+      <!-- Part 6: inline error holder + counter spot (JS fills) -->
+      <small id="messageError" class="error" role="alert" aria-live="polite"></small>
+      <small id="msgCounter" class="msg-counter" aria-live="polite"></small>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Submit</button>
+      </div>
+
+      <!-- Part 6: overall status area (success/fail), JS writes here -->
+      <div id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+
+    <div class="section-divider"><span>or</span></div>
+
+    <!-- Step 2: Map Embed Toggle -->
+    <section class="map-section" aria-labelledby="map-heading">
+      <h2 id="map-heading">Our Main Centres</h2>
+
+      <p class="map-hint">View our Sandton and Camps Bay locations below.</p>
+
+      <button id="mapToggle"
+              class="btn map-toggle"
+              type="button"
+              aria-controls="mapPanel"
+              aria-expanded="false">
+        Show Drop-off Maps
+      </button>
+
+      <!-- Hidden by default -->
+      <div id="mapPanel" class="map-panel" hidden>
+        <div class="map-grid">
+          <div class="map-item">
+            <h4>Johannesburg – Sandton</h4>
+            <iframe
+              title="Sandton, Johannesburg"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114694.68665913996!2d28.0576379!3d-26.059426549999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957398cbf40517%3A0xdf8bd21bf1eb74c!2sSandton!5e0!3m2!1sen!2sza!4v1761508475995!5m2!1sen!2sza"
+              style="border:0; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.06);"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
-          <div class="field">
-            <label for="last-name">Surname*</label>
-            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required />
+
+          <div class="map-item">
+            <h4>Cape Town – Camps Bay</h4>
+            <iframe
+              title="Camps Bay, Cape Town"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13238.302588927336!2d18.382408!3d-33.9520409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc67ad0e328c89%3A0xc7a0b241c4464b97!2sCamps%20Bay%2C%20Cape%20Town%2C%208005!5e0!3m2!1sen!2sza!4v1761508283456!5m2!1sen!2sza"
+              style="border:0; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.06);"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
 
-        <label for="email">Email Address*</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required />
-
-        <label for="query-topic">Select a topic*</label>
-        <select id="query-topic" name="query-topic" required>
-          <option value="">-- Please select --</option>
-          <option value="Essentials">Essentials</option>
-          <option value="Impacts">Impacts</option>
-          <option value="Ways">Ways</option>
-          <option value="General">General Enquiry</option>
-        </select>
-
-        <label for="message">Message*</label>
-        <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
-
-        <div class="form-actions">
-  <button type="submit" class="btn">Submit</button>
-</div>
-
-      </form>
-      <div class="section-divider"><span>or</span></div>
-
-
-      <!-- Step 2: Map Embed Toggle -->
-      <section class="map-section" aria-labelledby="map-heading">
-        <h2 id="map-heading">Our Main Centres</h2>
-
-        <p class="map-hint">View our Sandton and Camps Bay locations below.</p>
-
-        <button id="mapToggle"
-                class="btn map-toggle"
-                type="button"
-                aria-controls="mapPanel"
-                aria-expanded="false">
-          
-                Show Drop-off Maps
-        </button>
-
-        <!-- Hidden by default -->
-        <div id="mapPanel" class="map-panel" hidden>
-          <div class="map-grid">
-            <div class="map-item">
-              <h4>Johannesburg – Sandton</h4>
-              <iframe
-                title="Sandton, Johannesburg"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114694.68665913996!2d28.0576379!3d-26.059426549999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957398cbf40517%3A0xdf8bd21bf1eb74c!2sSandton!5e0!3m2!1sen!2sza!4v1761508475995!5m2!1sen!2sza"
-                style="border:0; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.06);"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-
-            <div class="map-item">
-              <h4>Cape Town – Camps Bay</h4>
-              <iframe
-                title="Camps Bay, Cape Town"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13238.302588927336!2d18.382408!3d-33.9520409!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc67ad0e328c89%3A0xc7a0b241c4464b97!2sCamps%20Bay%2C%20Cape%20Town%2C%208005!5e0!3m2!1sen!2sza!4v1761508283456!5m2!1sen!2sza"
-                style="border:0; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.06);"
-                allowfullscreen
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-          </div>
-
-          <div class="map-links">
-            <a href="https://maps.google.com/?q=Sandton" target="_blank" rel="noopener">Open Sandton in Google Maps</a>
-            <span aria-hidden="true">•</span>
-            <a href="https://maps.google.com/?q=Camps+Bay" target="_blank" rel="noopener">Open Camps Bay in Google Maps</a>
-          </div>
+        <div class="map-links">
+          <a href="https://maps.google.com/?q=Sandton" target="_blank" rel="noopener">Open Sandton in Google Maps</a>
+          <span aria-hidden="true">•</span>
+          <a href="https://maps.google.com/?q=Camps+Bay" target="_blank" rel="noopener">Open Camps Bay in Google Maps</a>
         </div>
-      </section>
-      <!-- /map-section -->
-    </div>
+      </div>
+    </section>
+    <!-- /map-section -->
+  </div>
 
-    <div class="sidebar">
-      <section class="card">
-        <h2>General Contact Details</h2>
-        <p><b>Email:</b> <a href="mailto:bora.foundation@gmail.com">bora.foundation@gmail.com</a></p>
-        <p><b>Telephone:</b> <a href="tel:+27115475600">+27 (0)11 547 5600</a></p>
-        <p><b>WhatsApp:</b> <a href="https://wa.me/27608334690" target="_blank" rel="noopener">+27 608 334 690</a></p>
-      </section>
+  <div class="sidebar">
+    <section class="card">
+      <h2>General Contact Details</h2>
+      <p><b>Email:</b> <a href="mailto:bora.foundation@gmail.com">bora.foundation@gmail.com</a></p>
+      <p><b>Telephone:</b> <a href="tel:+27115475600">+27 (0)11 547 5600</a></p>
+      <p><b>WhatsApp:</b> <a href="https://wa.me/27608334690" target="_blank" rel="noopener">+27 608 334 690</a></p>
+    </section>
 
-      <section class="card">
-        <h3>Donation Drop-off / Shipping Address</h3>
-        <p>
-          <b>Shipping Address</b><br />
-          Bora Foundation<br />
-          PO Box 1942<br />
-          Cape Town, 8000<br />
-          South Africa
-        </p>
-        <p><b>Telephone:</b> <a href="tel:+27115775600">+27 (0)11 577 5600</a></p>
-        <p><b>WhatsApp:</b> <a href="https://wa.me/+27624753016" target="_blank" rel="noopener">+27 624 753 016</a></p>
-      </section>
+    <section class="card">
+      <h3>Donation Drop-off / Shipping Address</h3>
+      <p>
+        <b>Shipping Address</b><br />
+        Bora Foundation<br />
+        PO Box 1942<br />
+        Cape Town, 8000<br />
+        South Africa
+      </p>
+      <p><b>Telephone:</b> <a href="tel:+27115775600">+27 (0)11 577 5600</a></p>
+      <p><b>WhatsApp:</b> <a href="https://wa.me/+27624753016" target="_blank" rel="noopener">+27 624 753 016</a></p>
+    </section>
 
-      <section class="card">
-        <h3>Recommended Courier Services</h3>
-        <p>DHL</p>
-        <p>FedEx</p>
-        <p>The Courier Guy</p>
-      </section>
-    </div>
-  </main>
+    <section class="card">
+      <h3>Recommended Courier Services</h3>
+      <p>DHL</p>
+      <p>FedEx</p>
+      <p>The Courier Guy</p>
+    </section>
+  </div>
+</main>
+
 
   <footer>
     <h3>Our social media</h3>
