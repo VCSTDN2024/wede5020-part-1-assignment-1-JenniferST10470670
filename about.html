@@ -5,8 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us – Bora Foundation</title>
 
+  
   <!-- External stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="site.css">
+
+
+
+ 
+  <!-- SEO Meta Tags -->
+<meta name="description" content="Learn about the Bora Foundation’s story, mission, and vision to uplift orphaned children through care, education, and empowerment." />
+<meta name="keywords" content="Bora Foundation, about us, mission, vision, orphanage, education, charity" />
+<meta name="author" content="Jennifer Baleke" />
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:title" content="About Us – Bora Foundation" />
+<meta property="og:description" content="Discover how Bora Foundation was founded to create brighter futures for children through love, education, and community support." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/about.html" />
+<meta property="og:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+  
+<!-- Step 7: SEO & meta polish -->
+  <link rel="icon" href="images/BoraLogo.png" type="image/png" />
+  <meta name="theme-color" content="#1a4c48" />
+
+  <link rel="canonical" href="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/about.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Bora Foundation" />
+  <meta name="twitter:description" content="Learn about Bora Foundation’s mission and the people empowering communities through care and education." />
+  <meta name="twitter:image" content="https://vcstdn2024.github.io/wede5020-part-1-assignment-1-JenniferST10470670/images/og-cover.png" />
+
+
+
+
 
   <style>
     /* base */
@@ -217,6 +248,26 @@
         padding: 24px 16px;
       }
     }
+/* --- Animation for About Us title --- */
+.about-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a4c48;
+  margin: 0 0 8px;
+  opacity: 0;                            /* start hidden */
+  transform: translateY(-10px);          /* slide down slightly */
+  animation: aboutTitleReveal 1.2s ease-out forwards;
+}
+
+/* Keyframes for smooth slide + fade in */
+@keyframes aboutTitleReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
 </head>
 
@@ -241,21 +292,32 @@
 
   <!-- main -->
   <main>
-    <div id="imageblock">
-      <img src="images/about.png" alt="Bora Foundation logo" />
-    </div>
 
     <h1>About Us</h1>
     <p>Bora Foundation was established in 2018 by Bora Johnson. It is a non-profit organisation dedicated to supporting orphaned children. The Foundation embodies Bora Johnson's visionary commitment to uplifting the most vulnerable members of society, leaving a legacy of hope and empowerment.</p>
 
+    <div id="imageblock">
+      <img src="images/about.png" alt="Bora Foundation logo" />
+    </div>
+
     <h2>Vision</h2>
     <p>Bora Foundation’s vision is to create a place where orphaned children are not just survivors, but thrivers — where they are given the love, care, and opportunities to unlock their potential and become beacons of hope in the community.</p>
+    
+    <div id="imageblock">
+      <img src="images/vision.png" alt="Bora Foundation logo" />
+    </div>
 
-    <h3>Mission</h3>
+    <h2>Mission</h2>
     <p>The foundation will continue to prioritise the well-being of every child through education, psychological support, and healthcare, in order to encourage and build their futures.</p>
+    
+    <div id="imageblock">
+      <img src="images/mission.png" alt="Bora Foundation logo" />
+    </div>
 
-    <h4>The Impact of Your Donations</h4>
+    <h2>The Impact of Your Donations</h2>
     <p>Bora Foundation is dedicated to creating brighter futures for orphaned children by providing safe shelter, nutritious food, access to education, and psychological support. Guided by our mission to nurture and empower vulnerable young lives, we strive to make a meaningful difference in their lives.</p>
+    
+    
 
     <p><a href="essentials.html">Explore Essentials</a></p>
   </main>
@@ -279,5 +341,9 @@
     </div>
     <p>&copy; 2024 Bora Foundation. All rights reserved.</p>
   </footer>
+  
+  <!-- Link JavaScript here -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>
