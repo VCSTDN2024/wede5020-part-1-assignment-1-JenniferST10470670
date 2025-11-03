@@ -37,23 +37,297 @@ Added inline comments throughout the code to improve readability and understandi
 - Added animations for images and hover effects for CTA buttons.  
 - Redesigned **Contact page** into a two-column layout (form + details sidebar).  
 - Embedded **maps** for Johannesburg and Cape Town to show drop-off locations.  
+---
+
+## Part 2 Updates  
+
+### File & Folder Restructure  
+- All `.html` files moved to the project root for easier access.  
+- `styles.css` moved into a new `css/` folder and renamed `style.css`.  
+- `images/` folder cleaned up and renamed to lowercase for consistency.  
+
+### New Features / Work Done in Part 2  
+- Redesigned most pages for better aesthetics.  
+- Added responsive navigation and footer across all pages.  
+- Styled **Essentials page table** with a mobile-friendly stacked card layout.  
+- Added animations for images and hover effects for CTA buttons.  
+- Redesigned **Contact page** into a two-column layout (form + details sidebar).  
+- Embedded **maps** for Johannesburg and Cape Town to show drop-off locations.
 
 ---
-# Responsive Design Previews  
+
+## Part 2 Fixes  
+
+I fixed my referencing, provided a **detailed changelog**, and ensured that my website is **fully responsive and visually consistent** across all pages.  
+I also organised my GitHub commits clearly, showing step-by-step progress during development.  
+
+Additional updates included:
+- Improved **Harvard referencing** for full consistency and correct citation format.  
+- Created a **comprehensive changelog section** to record all development milestones.  
+
+---
+
+## **Part 3 Overview**  
+
+Part 3 builds upon Part 1 and 2 by adding **functionality, JavaScript enhancements, SEO improvements, and validation**.  
+The Bora Foundation website now includes interactive and accessible features designed to enhance user experience and demonstrate dynamic web skills.
+
+---
+
+
+###  SEO & Performance Optimisation  
+- Added **robots.txt** and **sitemap.xml** for search engine indexing.  
+- Integrated **Open Graph** and **Twitter Card** tags for social media sharing.  
+- Included **canonical links, favicon, and theme colour** for all pages.  
+- Improved HTML structure, accessibility, and keyword consistency.  
+
+---
+
+### CSS Update: From `styles.css` to `site.css`  
+The global stylesheet was renamed from **`styles.css`** to **`site.css`** for better clarity and alignment with web development naming conventions.  
+This change ensures that:  
+- The file name matches the project’s structure (used consistently in all HTML files).  
+- Future updates and maintenance are simplified.  
+- It avoids confusion with previous versions or temporary backup style sheets used during Part 2.  
+
+The **`site.css`** file now holds all consolidated and optimised design rules, including:  
+- Responsive layout fixes.  
+- Consistent colour tokens and typography.  
+- New animations and section transitions used in Part 3 features.  
+
+---
+
+### JavaScript Organisation: `main.js`  
+All dynamic behaviour and DOM interactions were grouped into a single script file called **`main.js`** located in the `js/` directory.  
+This structure was created to:  
+- Keep the HTML clean and lightweight.  
+- Reuse scripts like search functionality, accordion toggles, and form validation across multiple pages.  
+- Display toast notifications and confirmation messages.  
+- Animate elements during scrolling for smoother UX.  
+- Support maintainability by having one central file for all interactive features introduced in Part 3.  
+
+These updates improved the website’s **readability, reusability, and professional file organisation**, which are key outcomes of the Part 3 requirements.  
+
+---
+
+## Changelog (Part 3 – Final Merge)  
+
+| Date        | Change Description                                                                 |
+|:-----------:|:------------------------------------------------------------------------------------|
+| 25 Oct 2025 | Added `robots.txt` and `sitemap.xml` to improve SEO crawling and indexing          |
+| 27 Oct 2025 | Replaced `styles.css` with `site.css` for consistency and better structure; moved all scripts to `main.js` |
+| 29 Oct 2025 | Added interactive donation search bar with alphabetical filter and toast validation alerts |
+| 30 Oct 2025 | Enhanced Contact Form with input validation, thank-you popup, and map toggle using Google Maps embeds |
+| 31 Oct 2025 | Improved About and Impacts pages with new images, animations, and gallery enhancements |
+| 1 Nov 2025  | Fixed some pages that were not responding                                          |
+| 2 Nov 2025  | Final merge completed — all Part 3 features, SEO updates, and design refinements integrated into `main` branch |
+| 3 Nov 2025  | Final README.md update with full documentation and screenshots uploaded to GitHub |
+
+---
+
+## Home Page  
+
+- Added **smooth animations** using `data-animate` for a modern, welcoming entry effect.  
+- Centred and styled the foundation quote:  
+  “Shining a Light, Building Brighter Futures.”  
+- Improved the **hero section layout** to align text and visuals neatly across screen sizes.  
+- Ensured fast loading and consistent theme colours for a professional first impression.  
+
+---
+
+## About Page  
+
+- Introduced **new images** showing the foundation’s community and impact stories.  
+- Added **fade-in animations** to improve visitor engagement.  
+- Improved readability with soft background tones and balanced spacing.  
+- Updated content to reflect Bora Foundation’s **mission, vision, and core values**.  
+
+---
+
+## Essentials Page  
+
+- Introduced a **search bar** at the top allowing users to quickly find donation items.  
+- Added **alphabetical search logic (A–Z)** with a gentle **toast message** if a user types numbers.  
+- Search includes expanded donation items list – clothes, food, toiletries, stationery, etc.  
+- Added **inclusive messaging** reminding users every contribution from the heart helps.  
+- Included a **scroll-to-top button** for improved user navigation.  
+- Maintained existing accordion and table styling while improving accessibility and focus states.  
+
+---
+
+## Donate Page  
+
+- Page layout restored with updated structure and visuals.  
+- Added responsive donation sections, clear calls-to-action, and simplified headings.  
+- Ensured navigation consistency and fixed asset links to match the new folder setup.  
+- Optimised for both **desktop and mobile** donors to view and contribute easily.  
+- Included a **scroll-to-top button** for improved user navigation.  
+
+---
+
+## Impacts Page  
+
+- Created an **interactive image gallery** highlighting real-life impact stories.  
+- Included subtle hover animations for images, showcasing projects and celebrations.  
+- Added **lightbox-style view** and image hover animations.  
+- Ensured the gallery is responsive and works seamlessly on all screen sizes.  
+- Included a **scroll-to-top button** for improved user navigation.  
+- Improved storytelling through meaningful visuals that connect emotionally with visitors.  
+
+---
+
+## Contact Page  
+
+- Created a fully functional enquiry form with field validation (name, surname, email, topic, message).  
+- Added email format validation and required-field checks.  
+- Integrated a popup summary thanking the user and displaying submitted details.  
+- Embedded Google Maps toggle section showing Sandton and Camps Bay drop-off locations.  
+- Used JavaScript to manage map visibility and form feedback.  
+- Improved overall accessibility and mobile layout.  
+- Included a **scroll-to-top button** for improved user navigation.  
+
+---
+
+## SEO & Accessibility Improvements  
+
+- Added full **SEO meta tags**, Open Graph, and Twitter Card integration.  
+- Created and linked **`robots.txt`** and **`sitemap.xml`** for better search-engine visibility.  
+- Added **canonical links**, theme-colour meta, and consistent `favicon`.  
+- Improved semantic structure and heading order for accessibility.  
+- Verified all pages using the **W3C HTML and CSS Validation Tools** – passed successfully.  
+
+---
+
+## Screenshots & Proof of Work  
+
+---
+
+###  **Home Page Animation**
+<p align="center">
+  <img width="781" height="1281" alt="Home Page" src="https://github.com/user-attachments/assets/1da1c413-8f4c-40cc-9af5-5de93d7ac3ed" />
+  <br>
+  <em><strong>Figure 1:</strong> Homepage layout showcasing the Bora Foundation’s identity and navigation. The design features a clean banner, accessible menu, and responsive layout to create a professional first impression.</em>
+</p>
+
+---
+
+###  **Essentials Search Feature**
+<p align="center">
+  <img width="2828" height="1549" alt="Essentials Search" src="https://github.com/user-attachments/assets/e255560f-c4af-4e56-92b7-4b78dd081591" />
+  <br>
+  <em><strong>Figure 2:</strong> Essentials page displaying the donation search feature and a responsive table listing current needs.</em>
+</p>
+
+<p align="center">
+  <img width="2048" height="1051" alt="Impact Section" src="https://github.com/user-attachments/assets/766233f4-601c-4823-91d1-8d20a10005b5" />
+  <br>
+  <em><strong>Figure 3:</strong> Impact message and expandable list of priority items (Clothing & Shoes, Food, Toiletries & Cleaning) with a clear <strong>Ways to Give</strong> call-to-action.</em>
+</p>
+
+---
+
+###  **Impacts Gallery**
+<p align="center">
+  <img width="2428" height="1514" alt="Gallery Impact" src="https://github.com/user-attachments/assets/ec16089f-4c77-4c7a-9e94-3d2309f5acf1" />
+  <br>
+  <em><strong>Figure 4:</strong> The <em>Gallery</em> section highlights real moments of impact, such as children sharing a warm meal, showing how every donation helps build brighter futures.</em>
+</p>
+
+<p align="center">
+  <img width="2048" height="1003" alt="Gallery Grid" src="https://github.com/user-attachments/assets/179ee7bc-592b-4473-affa-729a2b4cc990" />
+  <br>
+  <em><strong>Figure 5:</strong> Clickable gallery grid displaying real images of donations and community impact — from school shoes and backpacks to warm meals and thank-you cards.</em>
+</p>
+
+---
+
+###  **Contact Form & Popups**
+<p align="center">
+  <img width="1188" height="1542" alt="Contact Form Empty" src="https://github.com/user-attachments/assets/abc2dee3-1a0a-4c04-b4bc-c622d27e252b" />
+  <br>
+  <em><strong>Figure 6:</strong> Contact form with input validation prompts guiding users to fill in required fields such as name, email, topic, and message before submitting.</em>
+</p>
+
+<p align="center">
+  <img width="1330" height="1477" alt="Contact Dropdown" src="https://github.com/user-attachments/assets/bf5ede38-745a-44e9-815f-ccfd2ad13585" />
+  <br>
+  <em><strong>Figure 7:</strong> Contact form with validation and dropdown menu for selecting a topic — ensuring accurate and organised enquiries.</em>
+</p>
+
+<p align="center">
+  <img width="1675" height="1408" alt="Confirmation Popup" src="https://github.com/user-attachments/assets/5d26fcb6-7c88-4754-8fc5-3a6f11f402af" />
+  <br>
+  <em><strong>Figure 8:</strong> Confirmation popup thanking the user after form submission — displaying entered details and ensuring message delivery feedback.</em>
+</p>
+
+---
+
+###  **Drop-off Location Maps**
+<p align="center">
+  <img width="1303" height="1084" alt="Drop-off Maps" src="https://github.com/user-attachments/assets/7d56ece2-c4a3-4735-bd3f-89e1e32d48a0" />
+  <br>
+  <em><strong>Figure 9:</strong> Embedded Google Maps showing Bora Foundation drop-off locations in Sandton and Camps Bay.</em>
+</p>
+
+---
+
+### ⚙️ **SEO Validation Proof**
+<p align="center">
+  <img width="2200" height="519" alt="robots.txt SEO Proof" src="https://github.com/user-attachments/assets/cd97f808-7c91-467d-9517-b3103ea7037c" />
+  <br>
+  <em><strong>Figure 10:</strong> Screenshot of the <code>robots.txt</code> file confirming that the Bora Foundation website is open for search engine indexing and linked to the sitemap for SEO visibility.</em>
+</p>
+
+---
+
+
+
+##  Conclusion  
+
+The Bora Foundation project demonstrates my full web development process — from planning and structuring pages to implementing responsive design, functionality, and SEO optimisation.  
+
+Through each part of the POE, I was able to strengthen my skills in HTML, CSS, and JavaScript while learning how to create a website that is both visually appealing and user-friendly. The website now provides donors and visitors with a clear understanding of the foundation’s goals, as well as easy ways to contribute and get involved.  
+
+This project also helped me gain valuable experience in version control using GitHub, ensuring proper documentation, commit tracking, and professional presentation of my work.  
+
+Overall, completing this website was an important milestone in my learning journey, allowing me to apply both technical and design principles to create a meaningful and functional online platform for a real-world cause.  
+
+---
+
+
+# 📱 Responsive Design Previews  
 
 Our website was designed to be **fully responsive**, ensuring a seamless experience across all devices.  
 
-## Mobile View  
-![Mobile Screenshot](<img width="1423" height="1481" alt="image" src="https://github.com/user-attachments/assets/c5125e73-56c2-46df-aaae-4834d3c3c075" />
- 
+---
 
-## Tablet View 
-![Tablet Screenshot](<img width="1751" height="1439" alt="image" src="https://github.com/user-attachments/assets/8c73adcf-e071-49a4-b522-1e116cf5a126" />
- 
+###  Mobile View
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/c5125e73-56c2-46df-aaae-4834d3c3c075" alt="Mobile Screenshot" width="400">
+  <br>
+  <em>Figure 11: Mobile view displaying the Bora Foundation website layout optimised for smaller screens, ensuring easy navigation and readability.</em>
+</p>
 
-## Desktop View  
-![Tablet Screenshot](<img width="2856" height="1416" alt="image" src="https://github.com/user-attachments/assets/14b2e0f4-6873-4859-b227-31766f0495a3" />
- 
+---
+
+###  Tablet View
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8c73adcf-e071-49a4-b522-1e116cf5a126" alt="Tablet Screenshot" width="600">
+  <br>
+  <em>Figure 12: Tablet view showing responsive scaling and balanced spacing, maintaining consistent visual structure across devices.</em>
+</p>
+
+---
+
+###  Desktop View
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/14b2e0f4-6873-4859-b227-31766f0495a3" alt="Desktop Screenshot" width="800">
+  <br>
+  <em>Figure 13: Desktop view presenting the full-width layout and detailed design of the Bora Foundation website for larger screens.</em>
+</p>
+
+---
+
 
 
 ## Project Overview choosen proposal 
@@ -378,25 +652,43 @@ It provides **clear deliverables** at each stage, resulting in a **well-structur
 - The budget **balances affordability and sustainability**, giving Jonah’s art business a strong digital foundation.  
 
 
-## 📚 Reference List  
+## 📚 Reference List
 
-- articles, orphanages, 2017. *Random Affection in Orphanages*. [online] DJ from the orphanage. Available at: <https://djfromtheorphanage.org/2017/10/02/random-affection-in-orphanages/> [Accessed 29 September 2025].  
+1. **Pinterest**, 2025. *Handmade thank-you card with colourful heart balloons.* [image online].  
+   Available at: <https://www.pinterest.com> [Accessed 2 November 2025].
 
-- kids, 2017. *Adoptions in America are declining*. [online] The Economist. Available at: <https://www.economist.com/united-states/2017/06/24/adoptions-in-america-are-declining> [Accessed 29 September 2025].  
+2. **Freepik**, 2025. *Volunteers sorting donated clothes in charity box.* [image online].  
+   Available at: <https://www.freepik.com> [Accessed 2 November 2025].
 
-- Casper, J., 2022. *Orphan Forced from Christian Home Highlights Islamic Ban on Adoption - Christianity Today*. [online] Christianity Today. Available at: <https://www.christianitytoday.com/2022/09/egypt-adoption-ban-sharia-kafala-coptic-orphans-shenouda/> [Accessed 29 September 2025].  
+3. **Unsplash**, 2025. *Children sharing a warm meal together.* [image online].  
+   Available at: <https://www.unsplash.com> [Accessed 2 November 2025].
 
-- Gabi, F., 2025. *Budget Images – Browse 2,409,692 Stock Photos, Vectors, and Video*. [online] Adobe Stock. Available at: <https://stock.adobe.com/za/search?k=budget&asset_id=65654674> [Accessed 28 September 2025].  
+4. **Gabi, F.**, 2025. *Budget Images – Browse 2,409,692 Stock Photos, Vectors, and Video.* [online] *Adobe Stock.*  
+   Available at: <https://stock.adobe.com/za/search?k=budget&asset_id=65654674> [Accessed 28 September 2025].
 
-- Ghirao, R., 2021. *Person wearing silver ring and white long sleeve shirt*. [online] Unsplash.com. Available at: <https://unsplash.com/photos/person-wearing-silver-ring-and-white-long-sleeve-shirt-UdDjFekHQuk> [Accessed 18 August 2025].  
+5. **FundsforNGOs**, 2024. *What is the importance of Project Budget? – Grants and Resources for Sustainability.* [online] *FundsforNGOs.*  
+   Available at: <https://www.fundsforngos.org/proposals/what-is-the-importance-of-project-budget/> [Accessed 26 August 2025].
 
-- Kora, M., 2024. *A young boy sitting on a chair in a living room*. [online] Unsplash.com. Available at: <https://unsplash.com/photos/a-young-boy-sitting-on-a-chair-in-a-living-room-U-VfflaRpK0> [Accessed 18 August 2025].  
+6. **Smaha, C.**, 2023. *Domain Hosting vs Web Hosting – What’s the Difference?* [online] *InMotion Hosting Blog.*  
+   Available at: <https://www.inmotionhosting.com/blog/domain-hosting-vs-web-hosting/> [Accessed 26 August 2025].
 
-- Shamsheer, N., 2024. *A picture of a hand and footprint on a wall*. [online] Unsplash.com. Available at: <https://unsplash.com/photos/a-picture-of-a-hand-and-foot-print-on-a-wall-GGQ7WSF0xns> [Accessed 24 August 2025].  
+7. **Kora, M.**, 2024. *A young boy sitting on a chair in a living room.* [online] *Unsplash.com.*  
+   Available at: <https://unsplash.com/photos/a-young-boy-sitting-on-a-chair-in-a-living-room-U-VfflaRpK0> [Accessed 18 August 2025].
 
-- Muniz, J., 2020. *Photo by Joel Muniz on Unsplash*. [online] Unsplash.com. Available at: <https://unsplash.com/photos/man-in-black-t-shirt-holding-coca-cola-bottle-3k3l2brxmwQ> [Accessed 24 August 2025].  
+8. **Shamsheer, N.**, 2024. *A picture of a hand and footprint on a wall.* [online] *Unsplash.com.*  
+   Available at: <https://unsplash.com/photos/a-picture-of-a-hand-and-foot-print-on-a-wall-GGQ7WSF0xns> [Accessed 24 August 2025].
 
-- Smaha, C., 2023. *Domain Hosting vs Web Hosting - What’s the Difference?* [online] InMotion Hosting Blog. Available at: <https://www.inmotionhosting.com/blog/domain-hosting-vs-web-hosting/> [Accessed 26 August 2025].  
+9. **Ghirao, R.**, 2021. *Person wearing silver ring and white long sleeve shirt.* [online] *Unsplash.com.*  
+   Available at: <https://unsplash.com/photos/person-wearing-silver-ring-and-white-long-sleeve-shirt-UdDjFekHQuk> [Accessed 18 August 2025].
 
-- FundsforNGOs, 2024. *What is the importance of Project Budget? - Grants and Resources for Sustainability*. [online] FundsforNGOs. Available at: <https://www.fundsforngos.org/proposals/what-is-the-importance-of-project-budget/> [Accessed 26 August 2025].  
+10. **Muniz, J.**, 2020. *Photo by Joel Muniz on Unsplash.* [online] *Unsplash.com.*  
+    Available at: <https://unsplash.com/photos/man-in-black-t-shirt-holding-coca-cola-bottle-3k3l2brxmwQ> [Accessed 24 August 2025].
 
+11. **Casper, J.**, 2022. *Orphan Forced from Christian Home Highlights Islamic Ban on Adoption – Christianity Today.* [online] *Christianity Today.*  
+    Available at: <https://www.christianitytoday.com/2022/09/egypt-adoption-ban-sharia-kafala-coptic-orphans-shenouda/> [Accessed 29 September 2025].
+
+12. **Kids**, 2017. *Adoptions in America are declining.* [online] *The Economist.*  
+    Available at: <https://www.economist.com/united-states/2017/06/24/adoptions-in-america-are-declining> [Accessed 29 September 2025].
+
+13. **Orphanages**, 2017. *Random Affection in Orphanages.* [online] DJ from the Orphanage.  
+    Available at: <https://djfromtheorphanage.org/2017/10/02/random-affection-in-orphanages/> [Accessed 29 September 2025].
