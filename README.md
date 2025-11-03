@@ -295,7 +295,7 @@ Overall, completing this website was an important milestone in my learning journ
 ---
 
 
-# 📱 Responsive Design Previews  
+#  Responsive Design Previews  
 
 Our website was designed to be **fully responsive**, ensuring a seamless experience across all devices.  
 
@@ -692,3 +692,4 @@ It provides **clear deliverables** at each stage, resulting in a **well-structur
 
 13. **Orphanages**, 2017. *Random Affection in Orphanages.* [online] DJ from the Orphanage.  
     Available at: <https://djfromtheorphanage.org/2017/10/02/random-affection-in-orphanages/> [Accessed 29 September 2025].
+
